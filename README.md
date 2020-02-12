@@ -4,9 +4,11 @@ My ubuntu application list and those configuration files
 
 * Environment: Ubuntu 19.04(Disco Dingo) or 19.10(Eoan Ermine)
 * Applications
+
   * Mail
     * Mailspring([Link](https://www.getmailspring.com))
     * Mutt([Link](http://www.mutt.org))
+
   * Web browser
     * whale([Link](https://whale.naver.com/ko))
       * Installation
@@ -15,10 +17,14 @@ My ubuntu application list and those configuration files
     * chromium([Link](https://www.chromium.org))
       * Installation
       	* apt install chromium-browser
+
   * Shell
     * zshell
+      * apt install zsh
+      * apt install powerline fonts-powerline # Support zshell fonts
       
     * oh-my-zshell
+      
 
   * Notion(Lotion)([Link](https://github.com/puneetsl/lotion))
     * Unofficial Linux app for Notion.so
