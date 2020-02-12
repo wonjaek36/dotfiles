@@ -20,9 +20,9 @@ My ubuntu application list and those configuration files
     * **Chromium**([Link](https://www.chromium.org))
       * Open-source version of Chrome
       * Installation
-      	* ```bash
-	  apt install chromium-browser
-	  ```
+      	```bash
+	apt install chromium-browser
+	```
 
   * Shell
     * **zshell**
