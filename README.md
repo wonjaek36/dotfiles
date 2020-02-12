@@ -14,7 +14,7 @@ My ubuntu application list and those configuration files
       * Naver web browser based on Chrome
       * Installation
       	* Download naver-whale-stable_amd64.deb from naver whale site
-      	* ```shell
+      	* ```
 	$ dpkg -i naver-whale-stable_amd64.deb
 	```
     * **Chromium**([Link](https://www.chromium.org))
