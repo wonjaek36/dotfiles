@@ -3,26 +3,34 @@
 My ubuntu application list and those configuration files
 
 * Environment: Ubuntu 19.04(Disco Dingo) or 19.10(Eoan Ermine)
-* Applications
 
-  * Mail
-    * **Mailspring**([Link](https://www.getmailspring.com))
-    * **Mutt**([Link](http://www.mutt.org))
+### Applications
 
-  * Web browser
-    * **Whale**([Link](https://whale.naver.com/ko))
-      * Naver web browser based on Chrome
-      * Installation
-      	* Download naver-whale-stable_amd64.deb from naver whale site
-      	* ```
-	$ dpkg -i naver-whale-stable_amd64.deb
-	```
-    * **Chromium**([Link](https://www.chromium.org))
-      * Open-source version of Chrome
-      * Installation
-      	```bash
-	apt install chromium-browser
-	```
+#### Mail
+
+**Mailspring**([Link](https://www.getmailspring.com))
+
+**Mutt**([Link](http://www.mutt.org))
+
+#### Web browser
+**Whale**([Link](https://whale.naver.com/ko))
+
+Naver web browser based on Chromium
+
+#### Installation
+Download naver-whale-stable_amd64.deb from naver whale site
+```
+dpkg -i naver-whale-stable_amd64.deb
+```
+
+**Chromium**([Link](https://www.chromium.org))
+
+Open-source version of Chrome
+
+Installation
+```
+apt install chromium-browser
+```
 
   * Shell
     * **zshell**
