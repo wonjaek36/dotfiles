@@ -81,6 +81,8 @@ eval `dircolors ~/.dir_colors/dircolors`
 ## Input Method
 ### fcitx
 
+&nbsp;
+
 
 ## Communication Tools
 ### Notion
