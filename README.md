@@ -1,6 +1,6 @@
 # ubuntu-configuration
 
-My ubuntu application list and those configuration files
+My ubuntu application list and those configuration files.
 * Environment: Ubuntu 19.04(Disco Dingo) or 19.10(Eoan Ermine)
 
 &nbsp;
@@ -42,9 +42,9 @@ apt install powerline fonts-powerline # Support zshell fonts
 ```
 
 ### oh-my-zshell
-Zshell framework to manage zshell configure effectively.
-(oh-my-zshell official site)[https://ohmyz.sh/], (oh-my-zshell github)[https://github.com/ohmyzsh/ohmyzsh#getting-started]
-  
+Zshell framework to manage zshell configure effectively.  
+[oh-my-zshell official site](https://ohmyz.sh), [oh-my-zshell github](https://github.com/ohmyzsh/ohmyzsh#getting-started)  
+
 **Installation**
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -62,8 +62,8 @@ plugins=(git rails ruby capistrano bundler
 My full zshrc is [Link](https://github.com/wonjaek36/ubuntu-configuration/blob/master/zshrc)
 
 ### Solarized
-Color scheme created by Ethan Schoonover. Detail in [Wiki](https://en.wikipedia.org/wiki/Solarized_(color_scheme))
-[Zshell agnoster theme solarized instruction](https://gist.github.com/renshuki/3cf3de6e7f00fa7e744a)
+Color scheme created by Ethan Schoonover. Detail in [Wiki](https://en.wikipedia.org/wiki/Solarized_(color_scheme)).  
+[Zshell agnoster theme solarized instruction](https://gist.github.com/renshuki/3cf3de6e7f00fa7e744a)  
 
 ```
 apt install dconf-cli
@@ -72,7 +72,7 @@ cd ~./solarized
 ./install.sh
 ```
 
-pick option1 twice(Dark Theme, seebi dircolors-solarized).
+pick option1 twice(dark theme, seebi dircolors-solarized).  
 Finally, add the line to $HOME/.zshrc 
 ```
 eval `dircolors ~/.dir_colors/dircolors`
@@ -84,7 +84,7 @@ eval `dircolors ~/.dir_colors/dircolors`
 
 ## Communication Tools
 ### Notion
-Unofficial Linux app for Notion.so
+Unofficial Linux app for Notion.so.
 
 **Installation**
 ```
