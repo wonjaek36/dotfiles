@@ -79,10 +79,10 @@ eval `dircolors ~/.dir_colors/dircolors`
 ```
 &nbsp;
 
-### Language
-## Java
+## Language
+### Java
 
-## Ruby
+### Ruby
 Download [official ruby](https://www.ruby-lang.org/en/downloads/)
 I've downloaded Ruby 2.7.0.
 Assume nodejs is already installed
@@ -103,7 +103,7 @@ rbenv rehash
 ```
 
 
-## Python
+### Python
 Download [official python](https://www.python.org/).
 I've downloaded Python 3.6.10.
 
@@ -114,7 +114,7 @@ make
 make install
 ```
 
-
+&nbsp;
 ## Text Editor
 ### Emacs
 
@@ -122,19 +122,21 @@ make install
 
 ### Atom
 
+&nbsp;
 ## Project Managment Tools
 ### Maven
 
 ### Gradle
 
 
+&nbsp;
 ## Integrated Development Environment
 ### IntelliJ
 
 ### Eclipse
 
 
-
+&nbsp;
 ## Communication Tools
 ### Notion
 Unofficial Linux app for Notion.so.
