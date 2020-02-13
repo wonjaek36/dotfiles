@@ -3,6 +3,7 @@
 My ubuntu application list and those configuration files
 * Environment: Ubuntu 19.04(Disco Dingo) or 19.10(Eoan Ermine)
 
+&nbsp;
 ## Mail Client
 ### Mailspring
 ([Link](https://www.getmailspring.com))
@@ -10,6 +11,7 @@ My ubuntu application list and those configuration files
 ### Mutt
 ([Link](http://www.mutt.org))
 
+&nbsp;
 ## Web browser
 ### Whale
 Naver web browser based on Chromium([Link](https://whale.naver.com/ko))  
@@ -28,6 +30,7 @@ Open-source web browser([Link](https://www.chromium.org))
 apt install chromium-browser
 ```
 
+&nbsp;
 ## Shell
 ### Zshell
 Extended shell from bash(Bourne shell)  
@@ -67,6 +70,7 @@ cd ~./solarized
 Pick option1 twice(Dark Theme, seebi dircolors-solarized).
 eval `dircolors ~/.dir_colors/dircolors`
 
+&nbsp;
   * fcitx
 
   * Notion(Lotion)([Link](https://github.com/puneetsl/lotion))
