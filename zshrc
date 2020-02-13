@@ -69,7 +69,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby capistrano bundler heroku rake rvm autojump command-not-found python pip github gnu-utils history-substring-search zsh-syntax-highlighting)
+plugins=(git ruby capistrano bundler heroku rake rvm autojump command-not-found python pip github gnu-utils history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +104,15 @@ eval `dircolors ~/.dir_colors/dircolors`
 alias shutdown='sudo shutdown -h now'
 alias reboot='sudo reboot'
 alias start='nautilus'
+alias emacs='emacs -nw'
+
+GRADLE_HOME="/home/wonjaek36/Programs/gradle-6.1.1"
+MAVEN_HOME="/home/wonjaek36/Programs/apache-maven-3.6.3"
+NODE_HOME="/home/wonjaek36/Programs/node-v12.15.0-linux-x64"
+export PATH="$PATH"":$GRADLE_HOME/bin"
+export PATH="$PATH"":$MAVEN_HOME/bin"
+export PATH="$PATH"":$NODE_HOME/bin"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
