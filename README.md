@@ -54,7 +54,10 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 In ~/.zshrc
 ```
 ZSH_THEME="agnoster" #Recommend install solarized theme
-plugins=(git rails ruby capistrano bundler heroku rake rvm autojump command-not-found python pip github gnu-utils history-substring-search zsh-syntax-highlighting)
+plugins=(git rails ruby capistrano bundler
+    heroku rake rvm autojump command-not-found
+    python pip github gnu-utils history-substring-search
+    zsh-syntax-highlighting)
 
 ### Solarized
 Color scheme created by Ethan Schoonover. Detail in [Wiki](https://en.wikipedia.org/wiki/Solarized_(color_scheme))
@@ -67,15 +70,24 @@ cd ~./solarized
 ./install.sh
 ```
 
-Pick option1 twice(Dark Theme, seebi dircolors-solarized).
+pick option1 twice(Dark Theme, seebi dircolors-solarized).
+Finally, add the line to $HOME/.zshrc 
+```
 eval `dircolors ~/.dir_colors/dircolors`
-
+```
 &nbsp;
-  * fcitx
+## Input Method
+### fcitx
 
-  * Notion(Lotion)([Link](https://github.com/puneetsl/lotion))
-    * Unofficial Linux app for Notion.so
-    * Installation
-      * Clone github repository(https://github.com/puneetsl/lotion)
-      * cd ./lotion
-      * ./install.sh
+
+## Communication Tools
+### Notion
+Unofficial Linux app for Notion.so
+
+**Installation**
+```
+git clone https://github.com/puneetsl/lotion
+cd .lotion
+./install.sh
+```
+
