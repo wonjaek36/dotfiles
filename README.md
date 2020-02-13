@@ -1,6 +1,6 @@
 # ubuntu-configuration
 
-My ubuntu application list and those configuration files.
+My ubuntu application list and those configuration files.(Updated 2020-02-13)
 * Environment: Ubuntu 19.04(Disco Dingo) or 19.10(Eoan Ermine)
 
 &nbsp;
@@ -78,10 +78,61 @@ Finally, add the line to $HOME/.zshrc
 eval `dircolors ~/.dir_colors/dircolors`
 ```
 &nbsp;
-## Input Method
-### fcitx
 
-&nbsp;
+### Language
+## Java
+
+## Ruby
+Download [official ruby](https://www.ruby-lang.org/en/downloads/)
+I've downloaded Ruby 2.7.0.
+Assume nodejs is already installed
+```
+apt install git curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+
+# install rbenv
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc # or bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+
+# install new ruby version
+rbenv install 2.6.5
+rbenv global # show list of versions
+rbenv global 2.6.5
+rbenv rehash
+```
+
+
+## Python
+Download [official python](https://www.python.org/).
+I've downloaded Python 3.6.10.
+
+```
+tar -xvf Python-3.6.10
+./configure
+make
+make install
+```
+
+
+## Text Editor
+### Emacs
+
+### Vim
+
+### Atom
+
+## Project Managment Tools
+### Maven
+
+### Gradle
+
+
+## Integrated Development Environment
+### IntelliJ
+
+### Eclipse
+
 
 
 ## Communication Tools
@@ -95,3 +146,6 @@ cd .lotion
 ./install.sh
 ```
 
+&nbsp;
+## Input Method
+### fcitx
