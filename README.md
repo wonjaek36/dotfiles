@@ -59,6 +59,7 @@ plugins=(git rails ruby capistrano bundler
     python pip github gnu-utils history-substring-search
     zsh-syntax-highlighting)
 ```
+My full zshrc is [Link](https://github.com/wonjaek36/ubuntu-configuration/blob/master/zshrc)
 
 ### Solarized
 Color scheme created by Ethan Schoonover. Detail in [Wiki](https://en.wikipedia.org/wiki/Solarized_(color_scheme))
