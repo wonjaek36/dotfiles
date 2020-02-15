@@ -116,3 +116,8 @@ export PATH="$PATH"":$NODE_HOME/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+[[ -s /home/wonjaek36/.autojump/etc/profile.d/autojump.sh ]] && source /home/wonjaek36/.autojump/etc/profile.d/autojump.sh
+
