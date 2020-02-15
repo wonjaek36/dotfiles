@@ -6,7 +6,7 @@ My ubuntu application list and those configuration files.(Updated 2020-02-13)
 &nbsp;
 ## Mail Client
 ### Mailspring
-([Link](https://www.getmailspring.com))
+Free email client. Download at official site. ([Link](https://www.getmailspring.com))
 
 ### Mutt
 ([Link](http://www.mutt.org))
@@ -81,6 +81,11 @@ eval `dircolors ~/.dir_colors/dircolors`
 
 ## Language
 ### Java
+Install openjdk-13
+```
+apt install openjdk-13-jdk
+# apt install openjdk-13-jdk-headless # if want to install headless version
+```
 
 ### Ruby
 Download [official ruby](https://www.ruby-lang.org/en/downloads/)
@@ -102,7 +107,6 @@ rbenv global 2.6.5
 rbenv rehash
 ```
 
-
 ### Python
 Download [official python](https://www.python.org/).
 I've downloaded Python 3.6.10.
@@ -117,17 +121,48 @@ make install
 &nbsp;
 ## Text Editor
 ### Emacs
+```
+apt install emacs
+```
 
 ### Vim
+```
+apt install vim
+```
 
 ### Atom
+Download from [atom](https://atom.io)
+```
+dpkg -i atom-amd64.deb
+```
 
 &nbsp;
 ## Project Managment Tools
 ### Maven
+Project management tools using XML language.
+Downloaded 3.6.3 version
 
+```
+wget http://mirror.apache-kr.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+tar -xvf apache-maven-3.6.3-bin.tar.gz -C ~/
+mv apache-maven-3.6.3 .apache-maven-3.6.3
+ln -s .apache-maven-3.6.3 .maven
+echo 'export MAVEN_HOME="/home/wonjaek36/.maven"' >> ~/.zshrc
+echo 'export PATH="$PATH:""$MAVEN_HOME/bin"' >> ~/.zshrc
+source ~/.zshrc
+```
 ### Gradle
-
+Project management tools using Groovy language.
+Download 6.1.1 version
+```
+wget https://services.gradle.org/distributions/gradle-6.1.1-all.zip
+unzip gradle-6.1.1-all.zip -d ~/
+mv gradle-6.1.1 .gradle-6.1.1
+ln -s .gradle-6.1.1 .gradle
+echo 'export GRADLE_HOME="/home/wonjaek36/.gradle"' >> ~/.zshrc
+echo 'export PATH="$PATH:""$GRADLE_HOME/bin"' >> ~/.zshrc
+source ~/.zshrc
+```
 
 &nbsp;
 ## Integrated Development Environment
@@ -151,3 +186,7 @@ cd .lotion
 &nbsp;
 ## Input Method
 ### fcitx
+My favorite korean input method.
+```
+apt intall fcitx-hangul
+```
