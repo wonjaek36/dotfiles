@@ -106,12 +106,6 @@ alias reboot='sudo reboot'
 alias start='nautilus'
 alias emacs='emacs -nw'
 
-GRADLE_HOME="/home/wonjaek36/Programs/gradle-6.1.1"
-MAVEN_HOME="/home/wonjaek36/Programs/apache-maven-3.6.3"
-NODE_HOME="/home/wonjaek36/Programs/node-v12.15.0-linux-x64"
-export PATH="$PATH"":$GRADLE_HOME/bin"
-export PATH="$PATH"":$MAVEN_HOME/bin"
-export PATH="$PATH"":$NODE_HOME/bin"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -121,3 +115,7 @@ eval "$(rbenv init -)"
 
 [[ -s /home/wonjaek36/.autojump/etc/profile.d/autojump.sh ]] && source /home/wonjaek36/.autojump/etc/profile.d/autojump.sh
 
+export MAVEN_HOME="/home/wonjaek36/.maven"
+export PATH="$PATH:""$MAVEN_HOME/bin"
+export GRADLE_HOME="/home/wonjaek36/.gradle"
+export PATH="$PATH:""$GRADLE_HOME/bin"
