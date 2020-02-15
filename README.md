@@ -176,6 +176,15 @@ mv idea-IU-193.6494.35 ~/.idea-IU-193.6494.35
 ```
 
 ### Eclipse
+Free IDE developed by Eclipse foundation
+Download on [official eclipse site](https://www.eclipse.org)
+```
+tar -xvf eclipse-inst-linux64.tar.gz
+cd eclipse-installer
+./eclipse-inst
+```
+Install with eclipse instruction.
+
 
 
 &nbsp;
