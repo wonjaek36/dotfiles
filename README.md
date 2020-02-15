@@ -167,6 +167,13 @@ source ~/.zshrc
 &nbsp;
 ## Integrated Development Environment
 ### IntelliJ
+JetBrains IDE for JVM, Android, and Enterprise Web Application, etc.
+Download on [Official Jetbrain site](https://www.jetbrains.com/ko-kr/idea/download/#section=linux)
+```
+tar -xvf ideaIU-2019.3.3.tar.gz
+mv idea-IU-193.6494.35 ~/.idea-IU-193.6494.35
+~/.idea-IU-193.6494.35/bin/idea.sh
+```
 
 ### Eclipse
 
