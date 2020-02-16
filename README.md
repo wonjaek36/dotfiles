@@ -150,6 +150,9 @@ ln -s .apache-maven-3.6.3 .maven
 echo 'export MAVEN_HOME="/home/wonjaek36/.maven"' >> ~/.zshrc
 echo 'export PATH="$PATH:""$MAVEN_HOME/bin"' >> ~/.zshrc
 source ~/.zshrc
+
+#Optional
+rm -rf apache-maven-3.6.3-bin.tar.gz
 ```
 ### Gradle
 Project management tools using Groovy language.
@@ -162,6 +165,9 @@ ln -s .gradle-6.1.1 .gradle
 echo 'export GRADLE_HOME="/home/wonjaek36/.gradle"' >> ~/.zshrc
 echo 'export PATH="$PATH:""$GRADLE_HOME/bin"' >> ~/.zshrc
 source ~/.zshrc
+
+#Optional
+rm -rf gradle-6.1.1-all.zip
 ```
 
 &nbsp;
@@ -173,7 +179,28 @@ Download on [Official Jetbrain site](https://www.jetbrains.com/ko-kr/idea/downlo
 tar -xvf ideaIU-2019.3.3.tar.gz
 mv idea-IU-193.6494.35 ~/.idea-IU-193.6494.35
 ~/.idea-IU-193.6494.35/bin/idea.sh
+
+#Optional
+rm -rf ideaIU-2019.3.3.tar.gz
+
+#Enroll Desktop Entry
 ```
+ln -s ~/.idea-IU-193.6494.35/bin/idea.sh /usr/bin/intelliJ
+vim /usr/share/applications/intelliJ.desktop
+```
+
+intelliJ.desktop
+```
+[Desktop Entry]
+Type=Application
+Name=IntelliJ
+Comment=JetBrain Integrated Development Environment
+Icon=/home/wonjaek36/.idea-IU-193.6494.35/bin/idea.png
+Exec=/usr/bin/intelliJ
+Terminal=false
+Categories=Development;IDE;Java;
+```
+
 
 ### Eclipse
 Free IDE developed by Eclipse foundation
@@ -182,9 +209,31 @@ Download on [official eclipse site](https://www.eclipse.org)
 tar -xvf eclipse-inst-linux64.tar.gz
 cd eclipse-installer
 ./eclipse-inst
+
+#Optional
+rm -rf eclipse-inst-linux64.tar.gz
 ```
+
 Install with eclipse instruction.
 
+#Enroll Desktop Entry
+```
+# Eclipse installed on .jee-2019-12
+ln -s ~/.jee-2019-12/eclipse/eclipse /usr/bin/eclipse
+vim /usr/share/applications/eclipse.desktop
+```
+
+eclipse.desktop
+```
+[Desktop Entry]
+Type=Application
+Name=Eclipse
+Comment=Eclipse Integrated Development Environment
+Icon=/home/wonjaek36/.jee-2019-12/eclipse/icon.xpm
+Exec=/usr/bin/eclipse
+Terminal=false
+Categories=Development;IDE;Java;
+```
 
 
 &nbsp;
