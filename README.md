@@ -174,7 +174,7 @@ rm -rf gradle-6.1.1-all.zip
 ## Integrated Development Environment
 ### IntelliJ
 JetBrains IDE for JVM, Android, and Enterprise Web Application, etc.
-Download on [Official Jetbrain site](https://www.jetbrains.com/ko-kr/idea/download/#section=linux)
+Download on [official Jetbrain site](https://www.jetbrains.com/ko-kr/idea/download/#section=linux)
 ```
 tar -xvf ideaIU-2019.3.3.tar.gz
 mv idea-IU-193.6494.35 ~/.idea-IU-193.6494.35
@@ -235,7 +235,6 @@ Exec=/usr/bin/eclipse
 Terminal=false
 Categories=Development;IDE;Java;
 ```
-
 
 &nbsp;
 ## Communication Tools
