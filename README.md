@@ -9,7 +9,15 @@ My ubuntu application list and those configuration files.(Updated 2020-02-13)
 Free email client. Download at official site. ([Link](https://www.getmailspring.com))
 
 ### Mutt
-([Link](http://www.mutt.org))
+Text-based email client. ([Link](http://www.mutt.org))
+**Installation**
+```
+apt install mutt
+```
+
+Settings followed by this article
+[Setting Up Mutt With Gmail on Ubuntu](http://nickdesaulniers.github.io/blog/2016/06/18/mutt-gmail-ubuntu/)
+
 
 &nbsp;
 ## Web browser
