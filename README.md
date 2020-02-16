@@ -182,14 +182,15 @@ mv idea-IU-193.6494.35 ~/.idea-IU-193.6494.35
 
 #Optional
 rm -rf ideaIU-2019.3.3.tar.gz
+```
 
-#Enroll Desktop Entry
+Register intelliJ exec to bin and intelliJ.desktop to applications
 ```
 ln -s ~/.idea-IU-193.6494.35/bin/idea.sh /usr/bin/intelliJ
 vim /usr/share/applications/intelliJ.desktop
 ```
 
-intelliJ.desktop
+intelliJ.desktop file
 ```
 [Desktop Entry]
 Type=Application
