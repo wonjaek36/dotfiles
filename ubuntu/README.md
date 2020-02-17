@@ -85,6 +85,22 @@ Finally, add the line to $HOME/.zshrc
 ```
 eval `dircolors ~/.dir_colors/dircolors`
 ```
+
+### Terminator
+```
+apt install terminator
+
+# Terminator Solarized(https://github.com/ghuntley/terminator-solarized)
+git clone https://github.com/ghuntley/terminator-solarized.git
+cd terminator-solarized
+mkdir -p ~/.config/terminator/
+touch ~/.config/terminator/config
+# if you want to replace current config:
+cp config ~/.config/terminator
+# if you want to append current config:
+cat config >> ~/.config/terminator/config
+```
+
 &nbsp;
 
 ## Language
