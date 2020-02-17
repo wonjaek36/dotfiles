@@ -88,6 +88,7 @@ eval `dircolors ~/.dir_colors/dircolors`
 
 ### Terminator
 ```
+# Install Terminator
 apt install terminator
 
 # Terminator Solarized(https://github.com/ghuntley/terminator-solarized)
