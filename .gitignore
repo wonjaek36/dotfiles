@@ -1,2 +1,7 @@
 #*#
 *~
+
+### Vim 
+# backup files
+*.swp
+*.swo
