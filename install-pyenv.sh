@@ -57,7 +57,9 @@ if [ -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
 	echo "Check pyenv installations"
 else
 	git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-	echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.zshrc
+	if ! (grep -q -E "^eval.*pyenv virtualenv-init -)\"$" "$HOME/.zshrc"); then
+	    echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.zshrc
+	fi
 	pyenv virtualenvs
 	if [ $? != 0 ]; then
 		echo 'Pyenv virtualenv did not success'
