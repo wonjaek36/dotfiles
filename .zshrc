@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,6 +110,34 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# load zgenom
+[[ ! -f /home/wjkim/.zgenom/zgenom.zsh ]] || source "/home/wjkim/.zgenom/zgenom.zsh"
+
+### zgenom ###
+zgenom autoupdate
+
+if ! zgenom saved; then
+	echo "Creating a zgenom save"
+	zgenom ohmyzsh
+
+	# plugins
+	zgenom ohmyzsh plugins/git
+	zgenom ohmyzsh plugins/sudo
+
+	# just load the completions for docker-compose
+	#zgenom ohmyzsh --completions plugins/docker-compose
+
+	# Install ohmyzsh osx plugin if on macOS
+	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
+
+fi
+
+### End of zgenom ###
+
+### Install Path ###
+export INSTALL_PATH="$HOME/.local"
+export PATH="$INSTALL_PATH/bin:$PATH"
+
 if command apt --version 1> /dev/null 2>&1; then
 	# debian
 	# Usually personal computer
@@ -125,12 +153,9 @@ if command nvim --version 1>/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
-### Install Path ###
-export INSTALL_PATH="$HOME/apps"
-export PATH="$INSTALL_PATH/bin:$PATH"
-
 ### PYENV ###
 export PYENV_HOME="$HOME/.pyenv"
 export PATH="$PYENV_HOME/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
