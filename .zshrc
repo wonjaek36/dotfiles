@@ -110,19 +110,24 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if command apt > /dev/null; then
+if command apt --version 1> /dev/null 2>&1; then
 	# debian
 	# Usually personal computer
 	alias shutdown='sudo shutdown -h now'
 	alias reboot='sudo reboot'
 	alias start='nautilus'
-elif command yum > /dev/null; then
+elif command yum --version 1> /dev/null; 2>&1 then
 	# red-hat
 fi
-	
-alias emacs='emacs -nw'
-alias vim='nvim'
 
+alias emacs='emacs -nw'
+if command nvim --version 1>/dev/null 2>&1; then
+    alias vim='nvim'
+fi
+
+### Install Path ###
+export INSTALL_PATH="$HOME/apps"
+export PATH="$INSTALL_PATH/bin:$PATH"
 
 ### PYENV ###
 export PYENV_HOME="$HOME/.pyenv"
