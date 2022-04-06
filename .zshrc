@@ -110,7 +110,22 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+if command apt > /dev/null; then
+	# debian
+	# Usually personal computer
+	alias shutdown='sudo shutdown -h now'
+	alias reboot='sudo reboot'
+	alias start='nautilus'
+elif command yum > /dev/null; then
+	# red-hat
+fi
+	
+alias emacs='emacs -nw'
+alias vim='nvim'
+
+
+### PYENV ###
+export PYENV_HOME="$HOME/.pyenv"
+export PATH="$PYENV_HOME/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
