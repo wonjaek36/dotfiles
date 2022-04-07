@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # load zgenom
-[[ ! -f /home/wjkim/.zgenom/zgenom.zsh ]] || source "/home/wjkim/.zgenom/zgenom.zsh"
+[[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
 
 ### zgenom ###
 zgenom autoupdate
