@@ -117,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 zgenom autoupdate
 
 if ! zgenom saved; then
-	echo "Creating a zgenom save"
+	# echo "Creating a zgenom save"
 	zgenom ohmyzsh
 
 	# plugins
@@ -144,7 +144,7 @@ if command apt --version 1> /dev/null 2>&1; then
 	alias shutdown='sudo shutdown -h now'
 	alias reboot='sudo reboot'
 	alias start='nautilus'
-elif command yum --version 1> /dev/null; 2>&1 then
+elif command yum --version 1> /dev/null 2>&1; then
 	# red-hat
 fi
 
