@@ -16,3 +16,6 @@ get_latest_from_github() {
 
 get_latest_from_github 'neovim/neovim' 'nvim-linux64.tar.gz' 2>/dev/null | tar xz -C "$INSTALL_PATH" --strip 1
 
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 2>/dev/null
