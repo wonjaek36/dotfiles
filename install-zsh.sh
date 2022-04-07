@@ -40,6 +40,8 @@ if ! [ -d $HOME/.zgenom ]; then
 		echo "# load zgenom" >> $HOME/.zshrc
 		echo "[[ ! -f ${HOME}/.zgenom/zgenom.zsh ]] || source \"${HOME}/.zgenom/zgenom.zsh\"" >> $HOME/.zshrc
 	fi
+else
+	echo "$HOME/.zgenom directory already exists"
 fi
 
 echo "Success installing zsh"
