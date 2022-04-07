@@ -1,7 +1,7 @@
-
-
-
 set nocompatible
+
+set rtp+=~/.vim/autoload/plug.vim
+
 set t_Co=256
 set nu
 set tabstop=4
