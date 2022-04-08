@@ -2,7 +2,6 @@ if ! [ -z INSTALL_PATH ]; then
 	INSTALL_PATH="$HOME/.local"
 fi
 
-
 get_latest_from_github() {
 	# $1: user/repo
     # name_tag_suffix
