@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,9 +108,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# load zgenom
+load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
 
 ### zgenom ###
@@ -123,9 +123,11 @@ if ! zgenom saved; then
 	# plugins
 	zgenom ohmyzsh plugins/git
 	zgenom ohmyzsh plugins/sudo
+	zgenom ohmyzsh plugins/python
+	zgenom ohmyzsh plugins/systemd
 
 	# just load the completions for docker-compose
-	#zgenom ohmyzsh --completions plugins/docker-compose
+	# zgenom ohmyzsh --completions plugins/docker-compose
 
 	# Install ohmyzsh osx plugin if on macOS
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
@@ -159,3 +161,7 @@ export PATH="$PYENV_HOME/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# To customize prompt, run `p10k configure` or edit ~/workspace/configs/.p10k.zsh.
+# [[ ! -f ~/workspace/configs/.p10k.zsh ]] || source ~/workspace/configs/.p10k.zsh
+
+eval "$(starship init zsh)"
