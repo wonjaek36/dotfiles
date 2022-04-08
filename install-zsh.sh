@@ -45,7 +45,7 @@ else
 fi
 
 # Install starship theme 
-curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir $HOME/.local/bin
+curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir $HOME/.local/bin < <printf('y\n')
 
 
 echo "Success installing zsh"
