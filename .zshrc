@@ -165,3 +165,4 @@ eval "$(pyenv virtualenv-init -)"
 # [[ ! -f ~/workspace/configs/.p10k.zsh ]] || source ~/workspace/configs/.p10k.zsh
 
 eval "$(starship init zsh)"
+eval "$(dircolors $HOME/.dircolors)"
