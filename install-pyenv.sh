@@ -12,6 +12,24 @@ if ! ( command git --version > /dev/null ); then
 	echo "Please install git first"
 	exit 2
 fi
+
+echo "Install dependencies, if you have sudo previleges"
+SUDO_VALID=$(sudo -nv)
+SUDO_RET=$?
+
+if [ $SUDO_RET = 0 ] || [ grep -q -E 'password' $SUDO_VALID ]; then
+    if command apt --version 1> /dev/null 2>&1; then
+        sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+            libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+            libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
+            liblzma-dev python-openssl 
+    fi
+    if command yum --version 1> /dev/null 2>&1; then
+        # ToDo Support Redhat dependencies
+        echo "" 1> /dev/null
+    fi
+fi
+
 if [ -d ~/.pyenv ]; then
 	echo "$HOME/.pyenv directory exists"
 	echo "May pyenv already installed"
