@@ -39,6 +39,23 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 
 let g:airline_theme = 'wombat'
 
+" ctrlp
+" https://github.com/ctrlpvim/ctrlp.vim
+" Full path fuzzy file, buffer, mru, tag, .. finder for Vim
+Plug 'ctrlpvim/ctrlp.vim'
+
+" vim-indent-object
+" https://github.com/michaeljsmith/vim-indent-object
+" provide a convenient way to select 
+Plug 'michaeljsmith/vim-indent-object'
+
+" nerdcommenter
+" https://github.com/preservim/nerdcommenter
+" Select & Comment!
+Plug 'preservim/nerdcommenter'
+
+
+
 call plug#end()
 
 "call vundle#begin()
@@ -99,6 +116,10 @@ if $TERM == "xterm-256color"
 endif
 
 " General configs
+set sw=4
+set ts=4
+set softtabstop=4
+set autoindent
 set encoding=utf-8
 set nu
 set cursorline
