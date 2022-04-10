@@ -4,11 +4,13 @@ WORKING_DIR=$(pwd)
 
 
 if ! [ -f $HOME/.local/bin/zsh ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh-bin/master/install)" < <(printf '2\nn\n')
+    echo "Download zsh"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh-bin/master/install)"  # < <(printf '2\nn\n')
 fi
 
 if ! [ -d $HOME/.oh-my-zsh ]; then
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" < <(printf 'y\n')
+    echo "Download oh-my-zsh"
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  # < <(printf 'y\n')
 fi
 
 if ! [ -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
@@ -45,6 +47,7 @@ else
 fi
 
 # Install starship theme 
+echo "Download starship"
 curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir $HOME/.local/bin
 
 
