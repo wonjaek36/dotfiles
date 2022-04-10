@@ -6,8 +6,27 @@ pyenv_checker () {
 	    exit 4
     fi
 }
+
+get_latest_from_github() {
+	# $1: user/repo
+    # name_tag_suffix
+
+	curl https://api.github.com/repos/$1/releases/latest |
+		grep browser_download_url |
+		grep -Po 'https://.*?'$2 | 
+		xargs curl -L
+}
+
+get_latest_tag_from_github() {
+
+    # $1: user/repo
+    curl https://api.github.com/repos/$1/releases/latest |
+        grep tag_name |
+        grep -Po 'v[0-9]+\.[0-9]+\.[0-9]+'
+}
 ### End of Functions ###
 
+##### INSTALL PYENV ##### 
 if ! ( command git --version > /dev/null ); then
 	echo "Please install git first"
 	exit 2
@@ -81,3 +100,15 @@ else
 		echo 'Pyenv virtualenv did not success'
 	fi
 fi
+##### END OF INSTALL PYENV #####
+
+
+##### Install NVM #####
+if [ -z NVM_DIR ]; then
+    NVM_VERSION=$(get_latest_tag_from_github 'nvm-sh/nvm')
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+fi
+# TODO Why not working??
+# nvm --version
+# nvm install --lts
+##### END of INSTALL NVM #####
