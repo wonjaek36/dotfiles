@@ -104,7 +104,7 @@ fi
 
 
 ##### Install NVM #####
-if [ -z NVM_DIR ]; then
+if [ ! -z NVM_DIR ]; then
     NVM_VERSION=$(get_latest_tag_from_github 'nvm-sh/nvm')
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 fi
