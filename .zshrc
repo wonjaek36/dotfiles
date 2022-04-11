@@ -155,14 +155,24 @@ if command nvim --version 1>/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
+eval "$(dircolors $HOME/.dircolors)"
+
+### STARSHIP ###
+eval "$(starship init zsh)"
+### END OF STARSHIP ###
+
 ### PYENV ###
 export PYENV_HOME="$HOME/.pyenv"
 export PATH="$PYENV_HOME/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+### END OF PYENV ###
 
 # To customize prompt, run `p10k configure` or edit ~/workspace/configs/.p10k.zsh.
 # [[ ! -f ~/workspace/configs/.p10k.zsh ]] || source ~/workspace/configs/.p10k.zsh
 
-eval "$(starship init zsh)"
-eval "$(dircolors $HOME/.dircolors)"
+### NVM ###
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+### END OF NVM ###
