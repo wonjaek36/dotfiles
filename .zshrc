@@ -165,6 +165,7 @@ eval "$(starship init zsh)"
 export PYENV_HOME="$HOME/.pyenv"
 export PATH="$PYENV_HOME/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 ### END OF PYENV ###
 
