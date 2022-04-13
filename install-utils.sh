@@ -33,10 +33,10 @@ if ! ( command git --version > /dev/null ); then
 fi
 
 echo "Install dependencies, if you have sudo previleges"
-SUDO_VALID=$(sudo -nv)
+SUDO_VALID=$(sudo -v &> /dev/null)
 SUDO_RET=$?
 
-if [ $SUDO_RET = 0 ] || [ grep -q -E 'password' $SUDO_VALID ]; then
+if [ $SUDO_RET = 0 ]; then
     if command apt --version 1> /dev/null 2>&1; then
         sudo apt install -y make build-essential libssl-dev zlib1g-dev \
             libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
@@ -109,6 +109,10 @@ if [ ! -z NVM_DIR ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 fi
 # TODO Why not working??
-# nvm --version
-# nvm install --lts
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # this loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # THIS LOADS NVM BASH_COMPLETION
+nvm --version
+nvm install --lts
+npm install --prefix $HOME/.local -g yarn
 ##### END of INSTALL NVM #####
