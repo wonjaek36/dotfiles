@@ -18,3 +18,17 @@ get_latest_from_github 'neovim/neovim' 'nvim-linux64.tar.gz' 2>/dev/null | tar x
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 2>/dev/null
+
+
+# Install python plugins
+pyenv --version &> /dev/null
+CHECK_PYENV=$(echo $?)
+
+if [ $CHECK_PYENV == 0 ]; then
+    pyenv update
+    pyenv install -s 3.9.12  # TODO Install LTS automatically
+    pyenv global 3.9.12
+    python -m pip install pynvim
+else
+    echo "Pyenv is not installed"
+fi
