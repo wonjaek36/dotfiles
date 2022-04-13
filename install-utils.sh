@@ -3,7 +3,6 @@ pyenv_checker () {
     if ! (command pyenv root 1> /dev/null 2>&1); then
     	echo "Cannot find pyenv root or pyenv command"
     	echo "Check pyenv installations"
-	    exit 4
     fi
 }
 
@@ -73,10 +72,10 @@ fi
 
 # Install pyenv-update plugin #
 pyenv_checker
-if [ -d $(pyenv root)/plugins/pyenv-update ]; then
+if [ -d $HOME/.pyenv/plugins/pyenv-update ]; then
 	echo "pyenv-update plugins already exists"
 else
-    git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
+    git clone https://github.com/pyenv/pyenv-update.git $HOME/.pyenv/plugins/pyenv-update
     pyenv update
     if [ $? != 0 ];
     then
@@ -88,10 +87,10 @@ fi
 
 # Install pyenv-virtualenv #
 pyenv_checker
-if [ -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
+if [ -d $HOME/.pyenv/pyenv-virtualenv ]; then
 	echo "pyenv-virtualenv plugins already exists"
 else
-	git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+	git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
 	if ! (grep -q -E "^eval.*pyenv virtualenv-init -)\"$" "$HOME/.zshrc"); then
 	    echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.zshrc
 	fi
@@ -108,7 +107,6 @@ if [ ! -z NVM_DIR ]; then
     NVM_VERSION=$(get_latest_tag_from_github 'nvm-sh/nvm')
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 fi
-# TODO Why not working??
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # this loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # THIS LOADS NVM BASH_COMPLETION
