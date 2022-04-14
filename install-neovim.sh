@@ -1,3 +1,4 @@
+#!/bin/bash
 if ! [ -z INSTALL_PATH ]; then
 	INSTALL_PATH="$HOME/.local"
 fi
@@ -21,8 +22,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 
 # Install python plugins
-pyenv --version &> /dev/null
+pyenv --version 1> /dev/null 2> /dev/null
 CHECK_PYENV=$(echo $?)
+echo "pyenv --version: $CHECK_PYENV"
 
 if [ $CHECK_PYENV == 0 ]; then
     pyenv update
