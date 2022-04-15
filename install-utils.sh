@@ -155,7 +155,6 @@ else
     curl -L -o "$HOME/.local/bats/bat-$BAT_VERSION.tar.gz" "https://github.com/sharkdp/bat/releases/download/$BAT_VERSION/bat-$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz"
     cd $HOME/.local/bats
     tar -xvf bat-$BAT_VERSION.tar.gz
-    echo "bat-$BAT_VERSION-x86_64-unknown-linux-gnu|bat-$BAT_VERSION"
     mv bat-$BAT_VERSION-x86_64-unknown-linux-gnu bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     cd $HOME
