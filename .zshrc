@@ -109,11 +109,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
-
 ### zgenom ###
 zgenom autoupdate
 
@@ -132,16 +131,17 @@ if ! zgenom saved; then
     zgenom oh-my-zsh plugins/pip
     zgenom oh-my-zsh plugins/vi-mode
     zgenom oh-my-zsh plugins/command-not-found
+	# just load the completions for docker-compose
+	zgenom oh-my-zsh --completions plugins/docker-compose
 
-    # zgenom load lukechilds/zsh-nvm
+    zgenom load lukechilds/zsh-nvm
+    zgen load Aloxaf/fzf-tab 
     zgenom load zsh-users/zsh-syntax-highlighting
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions
     # zgenom load RobSis/zsh-completions-generator
 
-	# just load the completions for docker-compose
-	# zgenom ohmyzsh --completions plugins/docker-compose
 
 	# Install ohmyzsh osx plugin if on macOS
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
