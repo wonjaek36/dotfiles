@@ -103,14 +103,62 @@ fi
 
 
 ##### Install NVM #####
-if [ ! -z NVM_DIR ]; then
-    NVM_VERSION=$(get_latest_tag_from_github 'nvm-sh/nvm')
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
-fi
+nvm --version &>/dev/null
+NVM_CHECK=$(echo $?)
+echo "----- Install NVM -----"
 export NVM_DIR="$HOME/.nvm"
+if [ -d $NVM_DIR ]; then
+    echo "Previous installed nvm, removed"
+    rm -rf "$HOME/.nvm"
+fi
+
+NVM_VERSION=$(get_latest_tag_from_github 'nvm-sh/nvm')
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # this loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # THIS LOADS NVM BASH_COMPLETION
 nvm --version
 nvm install --lts
 npm install --prefix $HOME/.local -g yarn
 ##### END of INSTALL NVM #####
+
+##### Install Neofetch ##### 
+git --version &>/dev/null
+GIT_CHECK=$(echo $?)
+echo "----- Install Neofetch -----"
+if [ $GIT_CHECK != 0 ]; then
+    echo "git command not found, skip install neofetch"
+else
+    if [ -d $HOME/.neofetch ]; then
+        echo "Previous installed neofetch, removed"
+        rm -rf $HOME/.neofetch
+    fi
+    git clone https://github.com/dylanaraps/neofetch $HOME/.neofetch
+    cd $HOME/.neofetch
+    make PREFIX=$HOME/.local install
+    cd $HOME
+fi
+##### End of Neofetch #####
+
+##### Install Bat #####
+BAT_VERSION=$(get_latest_tag_from_github 'sharkdp/bat')
+git --version &>/dev/null
+GIT_CHECK=$(echo $?)
+echo "----- Install Bat -----"
+if [ $GIT_CHECK != 0 ]; then
+    echo "git command not found, skip install neofetch"
+else
+    if [ -d $HOME/.bat ]; then
+        echo "Previous installed bat, removed"
+        rm -rf $HOME/.bat
+    fi
+    mkdir -p $HOME/.local/bats/
+    curl -L -o "$HOME/.local/bats/bat-$BAT_VERSION.tar.gz" "https://github.com/sharkdp/bat/releases/download/$BAT_VERSION/bat-$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz"
+    cd $HOME/.local/bats
+    tar -xvf bat-$BAT_VERSION.tar.gz
+    echo "bat-$BAT_VERSION-x86_64-unknown-linux-gnu|bat-$BAT_VERSION"
+    mv bat-$BAT_VERSION-x86_64-unknown-linux-gnu bat-$BAT_VERSION
+    ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
+    cd $HOME
+fi
+
+##### End of Bat #####
