@@ -23,6 +23,14 @@ get_latest_tag_from_github() {
         grep tag_name |
         grep -Po 'v[0-9]+\.[0-9]+\.[0-9]+'
 }
+
+check_git_exists() {
+
+    # if git exists return 0, or not 0
+    git --version 1>/dev/null 2>/dev/null
+    GIT_CHECK=$(echo $?)
+    return $GIT_CHECK
+}
 ### End of Functions ###
 
 ##### INSTALL PYENV ##### 
@@ -164,3 +172,19 @@ else
     cd $HOME
 fi
 ##### End of Bat #####
+
+##### Install fzf #####
+GIT_CHECK=$(check_git_exists)
+if [ $GIT_CHECK != 0 ]; then
+    echo "git command not found, skip install fzf"
+else
+    if [ -d $HOME/.local/.fzf ]; then
+        echo "Previous installed fzf, removed"
+        rm -rf $HOME/.local/.fzf
+    fi
+
+    git clone https://github.com/junegunn/fzf.git $HOME/.local/.fzf
+    cd $HOME/.local/.fzf
+    printf 'y\ny\ny\n' | $HOME/.local/.fzf/install 
+fi
+##### End of fzf #####
