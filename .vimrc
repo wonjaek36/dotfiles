@@ -275,7 +275,7 @@ if $TERM == "xterm-256color"
 endif
 
 " General configs
-set wrap!
+set wrap
 set sw=4
 set ts=4
 set softtabstop=4
