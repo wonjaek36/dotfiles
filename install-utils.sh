@@ -159,5 +159,4 @@ else
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     cd $HOME
 fi
-
 ##### End of Bat #####
