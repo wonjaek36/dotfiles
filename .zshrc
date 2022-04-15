@@ -110,6 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+##### Bind key #####
+bindkey '^I' complete-word
+bindkey '^ ' autosuggest-accept
+##### End of Bind key #####
+
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
 
@@ -117,23 +122,35 @@ source $ZSH/oh-my-zsh.sh
 zgenom autoupdate
 
 if ! zgenom saved; then
+
 	# echo "Creating a zgenom save"
-	zgenom ohmyzsh
+	zgenom oh-my-zsh
 
 	# plugins
-	zgenom ohmyzsh plugins/git
-	zgenom ohmyzsh plugins/sudo
-	zgenom ohmyzsh plugins/python
-	zgenom ohmyzsh plugins/systemd
+	zgenom oh-my-zsh plugins/git
+	zgenom oh-my-zsh plugins/sudo
+	zgenom oh-my-zsh plugins/python
+	zgenom oh-my-zsh plugins/systemd
+    zgenom oh-my-zsh plugins/docker
+    zgenom oh-my-zsh plugins/virtualenvwrapper
+    zgenom oh-my-zsh plugins/pip
+    zgenom oh-my-zsh plugins/vi-mode
+    zgenom oh-my-zsh plugins/command-not-found
+
+    # zgenom load lukechilds/zsh-nvm
+    zgenom load zsh-users/zsh-syntax-highlighting
+    zgenom load zsh-users/zsh-history-substring-search
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenom load zsh-users/zsh-completions
+    # zgenom load RobSis/zsh-completions-generator
 
 	# just load the completions for docker-compose
 	# zgenom ohmyzsh --completions plugins/docker-compose
 
 	# Install ohmyzsh osx plugin if on macOS
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
-
+    zgenom save
 fi
-### End of zgenom ###
 
 if [ -f $HOME/.common.bzsh ]; then
     source $HOME/.common.bzsh
