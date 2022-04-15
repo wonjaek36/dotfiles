@@ -123,6 +123,7 @@ if ! zgenom saved; then
 
 	# plugins
 	zgenom oh-my-zsh plugins/git
+    zgenom oh-my-zsh plugins/fzf
 	zgenom oh-my-zsh plugins/sudo
 	zgenom oh-my-zsh plugins/python
 	zgenom oh-my-zsh plugins/systemd
