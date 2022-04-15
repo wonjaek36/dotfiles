@@ -110,10 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-##### Bind key #####
-bindkey '^I' complete-word
-bindkey '^ ' autosuggest-accept
-##### End of Bind key #####
 
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
@@ -152,8 +148,8 @@ if ! zgenom saved; then
     zgenom save
 fi
 
-if [ -f $HOME/.common.bzsh ]; then
-    source $HOME/.common.bzsh
+if [ -f $HOME/.common.bz.sh ]; then
+    source $HOME/.common.bz.sh
 fi
 
 ### Install Path ###
@@ -181,14 +177,6 @@ eval "$(dircolors $HOME/.dircolors)"
 eval "$(starship init zsh)"
 ### END OF STARSHIP ###
 
-### PYENV ###
-export PYENV_HOME="$HOME/.pyenv"
-export PATH="$PYENV_HOME/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
-### END OF PYENV ###
-
 # To customize prompt, run `p10k configure` or edit ~/workspace/configs/.p10k.zsh.
 # [[ ! -f ~/workspace/configs/.p10k.zsh ]] || source ~/workspace/configs/.p10k.zsh
 
@@ -197,3 +185,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ### END OF NVM ###
+
+
+##### Bind key #####
+bindkey '^I' complete-word
+bindkey '^ ' autosuggest-accept
+##### End of Bind key #####
+
