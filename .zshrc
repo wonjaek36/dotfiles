@@ -133,8 +133,11 @@ if ! zgenom saved; then
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
 
 fi
-
 ### End of zgenom ###
+
+if [ -f $HOME/.common.bzsh ]; then
+    source $HOME/.common.bzsh
+fi
 
 ### Install Path ###
 export INSTALL_PATH="$HOME/.local"

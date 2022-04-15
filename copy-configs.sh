@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cp -f .common.sh $HOME/.common.sh 2>/dev/null
+cp -f .common.bzsh $HOME/.common.sh 2>/dev/null
 cp -f .vimrc $HOME/.vimrc 2>/dev/null
 cp -f .zshrc $HOME/.zshrc 2>/dev/null
 cp -f .p10k.zsh $HOME/.p10k.zsh 2>/dev/null
