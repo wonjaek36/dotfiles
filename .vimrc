@@ -83,6 +83,20 @@ Plug 'nanotech/jellybeans.vim'
 " Language support
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
+" fzf.vim
+" https://github.com/junegunn/fzf.vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }
+nnoremap <leader><C-n> :Files<CR>
+
+if executable("rg")
+	nnoremap <leader>r :Rg!<CR>
+else
+	nnoremap <leader>r :Ag!<CR>
+endif
+
+set rtp+=~/.vim/plugged/fzf
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " colorscheme
@@ -247,9 +261,12 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Keymapping
 " NERDTreeKeymapping
-map <Leader>nte <ESC>:NERDTree<CR>
+" map <Leader>nte <ESC>:NERDTree<CR>
+nmap <C-n> <ESC>:NERDTree<CR>
 map <Leader>ntt <ESC>:NERDTreeToggle<CR>
-map <Leader>ntf <ESC>:NERDTreeFocus<CR>
+" map <Leader>ntf <ESC>:NERDTreeFocus<CR>
+" map <C-f> <C-f> <ESC>:NERDTreeFocus<CR>
+nmap <C-A-f> <ESC>:NERDTreeFocus<CR>
 
 " Moving tab
 map <Leader>tn <ESC>:tabn<CR>
