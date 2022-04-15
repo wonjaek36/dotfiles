@@ -147,16 +147,20 @@ echo "----- Install Bat -----"
 if [ $GIT_CHECK != 0 ]; then
     echo "git command not found, skip install neofetch"
 else
-    if [ -d $HOME/.bat ]; then
+    if [ -d $HOME/.local/bats/bat-latest ]; then
         echo "Previous installed bat, removed"
-        rm -rf $HOME/.bat
+        rm -rf $HOME/.local/bin/bat
+        rm -rf $HOME/.local/bats/bat-latest
+        rm -rf $HOME/.local/bats/bat-$BAT_VERSION*
     fi
     mkdir -p $HOME/.local/bats/
     curl -L -o "$HOME/.local/bats/bat-$BAT_VERSION.tar.gz" "https://github.com/sharkdp/bat/releases/download/$BAT_VERSION/bat-$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz"
     cd $HOME/.local/bats
     tar -xvf bat-$BAT_VERSION.tar.gz
+    echo $BAT_VERSION
     mv bat-$BAT_VERSION-x86_64-unknown-linux-gnu bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
+    ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
     cd $HOME
 fi
 ##### End of Bat #####
