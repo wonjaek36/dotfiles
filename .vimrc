@@ -1,4 +1,10 @@
-set nocompatible
+" Vim-plug 자동 설치용
+" START - Setting up Vundle - the vim plugin bundler
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 filetype off
 set rtp+=~/.vim/autoload/plug.vim
@@ -292,6 +298,7 @@ if $TERM == "xterm-256color"
 endif
 
 " General configs
+set nocompatible
 set wrap
 set sw=4
 set ts=4
