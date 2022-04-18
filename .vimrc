@@ -85,7 +85,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-loc
 
 " fzf.vim
 " https://github.com/junegunn/fzf.vim
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 nnoremap <leader><C-n> :Files<CR>
 
 if executable("rg")
