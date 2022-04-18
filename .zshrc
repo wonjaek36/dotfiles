@@ -197,7 +197,6 @@ fi
 # End of fzf ###
 
 ##### Bind key #####
-bindkey '^I' complete-word
 bindkey '^ ' autosuggest-accept
 ##### End of Bind key #####
 
