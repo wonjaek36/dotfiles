@@ -95,7 +95,7 @@ fi
 
 # Install pyenv-virtualenv #
 pyenv_checker
-if [ -d $HOME/.pyenv/pyenv-virtualenv ]; then
+if [ -d $HOME/.pyenv/plugins/pyenv-virtualenv ]; then
 	echo "pyenv-virtualenv plugins already exists"
 else
 	git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
