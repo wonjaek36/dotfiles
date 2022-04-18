@@ -109,6 +109,9 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# set FZF_BASE
+export FZF_BASE="$HOME/.local/.fzf/"
+
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
 ### zgenom ###
@@ -194,7 +197,6 @@ fi
 
 ### fzf ###
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-FZF_BASE="$HOME/.local/.fzf/"
 # End of fzf ###
 
 ##### Bind key #####
