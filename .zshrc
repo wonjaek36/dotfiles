@@ -194,6 +194,7 @@ fi
 
 ### fzf ###
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+FZF_BASE="$HOME/.local/.fzf/"
 # End of fzf ###
 
 ##### Bind key #####
