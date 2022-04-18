@@ -162,11 +162,11 @@ else
         rm -rf $HOME/.local/bats/bat-$BAT_VERSION*
     fi
     mkdir -p $HOME/.local/bats/
-    curl -L -o "$HOME/.local/bats/bat-$BAT_VERSION.tar.gz" "https://github.com/sharkdp/bat/releases/download/$BAT_VERSION/bat-$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz"
+    curl -L -o "$HOME/.local/bats/bat-$BAT_VERSION.tar.gz" "https://github.com/sharkdp/bat/releases/download/$BAT_VERSION/bat-$BAT_VERSION-x86_64-unknown-linux-musl.tar.gz"
     cd $HOME/.local/bats
     tar -xvf bat-$BAT_VERSION.tar.gz
     echo $BAT_VERSION
-    mv bat-$BAT_VERSION-x86_64-unknown-linux-gnu bat-$BAT_VERSION
+    mv bat-$BAT_VERSION-x86_64-unknown-linux-musl bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
     cd $HOME
