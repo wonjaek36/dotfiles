@@ -109,8 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
 ### zgenom ###
@@ -193,6 +191,10 @@ if [ -f $BAR_DIR ]; then
     export fpath=($fpath $BAT_DIR/autocomplete)
 fi
 ###########
+
+### fzf ###
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# End of fzf ###
 
 ##### Bind key #####
 bindkey '^I' complete-word
