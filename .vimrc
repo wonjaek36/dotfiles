@@ -280,19 +280,17 @@ map <Leader>tp <ESC>:tabp<CR>
 
 nnoremap <space> za
 
-
 " Python configs
-au BufNewFile, BufRead *.py
-                        \ set tabstop=4
-                        \ set softtabstop=4
-                        \ set shiftwidth=4
-                        \ set textwidth=79
-                        \ set expandtab
-                        \ set autoindent
-                        \ set fileformat=unix
-                        \ set colorcolumn=80
-                        \ highlight ColorColumn ctermbg=6
+aug python
+    au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
+    set colorcolumn=80
+    set textwidth=79
+    highlight ColorColumn ctermbg=3
+aug end
 
+if $TERM == "xterm-256color"
+        set t_Co=256
+endif
 if $TERM == "xterm-256color"
         set t_Co=256
 endif
