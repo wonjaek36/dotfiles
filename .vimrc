@@ -1,9 +1,9 @@
 " Vim-plug 자동 설치용
 " START - Setting up Vundle - the vim plugin bundler
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 filetype off
@@ -27,6 +27,8 @@ Plug 'tpope/vim-fugitive'
 " https://github.com/blueyed/vim-diminactive
 " Change background color depends on cursor location
 Plug 'blueyed/vim-diminactive'
+let g:diminactive_use_colorcolumn = 1
+
 
 " vim-airline
 " https://github.com/vim-airline/vim-airline
@@ -52,7 +54,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " vim-indent-object
 " https://github.com/michaeljsmith/vim-indent-object
-" provide a convenient way to select 
+" provide a convenient way to select
 Plug 'michaeljsmith/vim-indent-object'
 
 " nerdcommenter
@@ -95,9 +97,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 nnoremap <leader><C-n> :Files<CR>
 
 if executable("rg")
-	nnoremap <leader>r :Rg!<CR>
+    nnoremap <leader>r :Rg!<CR>
 else
-	nnoremap <leader>r :Ag!<CR>
+    nnoremap <leader>r :Ag!<CR>
 endif
 
 set rtp+=~/.vim/plugged/fzf
@@ -113,7 +115,7 @@ if exists('termguicolors')
 endif
 colorscheme spaceduck
 
-""""""" Coc Settings 
+""""""" Coc Settings
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 let g:coc_global_config="$HOME/.config/coc/coc-settings.json"
@@ -263,7 +265,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-""""""" End of Coc Settings 
+""""""" End of Coc Settings
 
 " Keymapping
 " NERDTreeKeymapping
@@ -276,21 +278,19 @@ nmap <C-A-f> <ESC>:NERDTreeFocus<CR>
 
 " Moving tab
 map <Leader>tn <ESC>:tabn<CR>
-map <Leader>tp <ESC>:tabp<CR>   
+map <Leader>tp <ESC>:tabp<CR>
 
 nnoremap <space> za
+
 
 " Python configs
 aug python
     au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
-    au FileType python setlocal set colorcolumn=80
-    au FileType python setlocal set textwidth=79
-    au FileType python setlocal highlight ColorColumn ctermbg=3
+    au FileType python set colorcolumn=80
+    au FileType python set textwidth=79
+    " au FileType python highlight ColorColumn ctermbg=3
 aug end
 
-if $TERM == "xterm-256color"
-        set t_Co=256
-endif
 if $TERM == "xterm-256color"
         set t_Co=256
 endif
@@ -305,7 +305,7 @@ set autoindent
 set encoding=utf-8
 set hidden
 set nu
-" set cursorline
+set cursorline
 set nobackup
 set nowritebackup
 set cmdheight=2
@@ -315,6 +315,7 @@ set hlsearch
 set smartindent
 set expandtab
 set backspace=indent,eol,start
+highlight ColorColumn ctermbg=16
 
 " Theme
 syntax enable
@@ -326,4 +327,3 @@ set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 if has("syntax")
 syntax on
 endif
-
