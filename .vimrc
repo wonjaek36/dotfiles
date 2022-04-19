@@ -283,9 +283,9 @@ nnoremap <space> za
 " Python configs
 aug python
     au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
-    set colorcolumn=80
-    set textwidth=79
-    highlight ColorColumn ctermbg=3
+    au FileType python setlocal set colorcolumn=80
+    au FileType python setlocal set textwidth=79
+    au FileType python setlocal highlight ColorColumn ctermbg=3
 aug end
 
 if $TERM == "xterm-256color"
