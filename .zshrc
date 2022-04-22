@@ -109,7 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# set FZF_BASE
 if [ -f $HOME/.common.bz.sh ]; then
     source $HOME/.common.bz.sh
 fi
@@ -139,17 +138,18 @@ if ! zgenom saved; then
 	zgenom oh-my-zsh --completions plugins/docker-compose
 
     zgenom load lukechilds/zsh-nvm
-    zgen load Aloxaf/fzf-tab 
+    zgenom load Aloxaf/fzf-tab 
     zgenom load zsh-users/zsh-syntax-highlighting
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions
-    # zgenom load RobSis/zsh-completions-generator
+    zgenom load RobSis/zsh-completions-generator
 
 
 	# Install ohmyzsh osx plugin if on macOS
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
     zgenom save
+    zgenom compile "$HOME/.zshrc"
 fi
 ### Install Path ###
 export INSTALL_PATH="$HOME/.local"
@@ -185,9 +185,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ### END OF NVM ###
 
-### fzf ###
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# End of fzf ###
+# Enable fzf-tab
+enable-fzf-tab
 
 ##### Bind key #####
 bindkey '^ ' autosuggest-accept
