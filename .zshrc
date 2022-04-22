@@ -50,7 +50,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions
     zgenom load RobSis/zsh-completions-generator
-    zgenom load MichaelAquilina/zsh-autoswitch-virtualenv
+    zgen load MichaelAquilina/zsh-autoswitch-virtualenv
 
 	# Install ohmyzsh osx plugin if on macOS
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
@@ -101,3 +101,4 @@ alias back='popd'
 bindkey '^ ' autosuggest-accept
 ##### End of Bind key #####
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
