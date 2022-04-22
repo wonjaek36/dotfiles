@@ -110,7 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # set FZF_BASE
-export FZF_BASE="$HOME/.local/.fzf/"
+if [ -f $HOME/.common.bz.sh ]; then
+    source $HOME/.common.bz.sh
+fi
 
 # load zgenom
 [[ ! -f $HOME/.zgenom/zgenom.zsh ]] || source "$HOME/.zgenom/zgenom.zsh"
@@ -149,11 +151,6 @@ if ! zgenom saved; then
 	#[[ "$(uname -s)" = Darwin ]] && zgenom ohmyzsh plugins/macos
     zgenom save
 fi
-
-if [ -f $HOME/.common.bz.sh ]; then
-    source $HOME/.common.bz.sh
-fi
-
 ### Install Path ###
 export INSTALL_PATH="$HOME/.local"
 export PATH="$INSTALL_PATH/bin:$PATH"
