@@ -188,3 +188,10 @@ else
     printf 'y\ny\ny\n' | $HOME/.local/.fzf/install 
 fi
 ## End of fzf #####
+
+echo '###### Install fd #####'
+get_latest_from_github sharkdp/fd x86_64-unknown-linux-musl.tar.gz 2> /dev/null | tar xz -C "$HOME/.local/bin" --strip 1
+mv $root/bin/autocomplete/_fd $zsh_completion_path/_fd
+mv $root/bin/autocomplete/fd.bash $bash_completion_path/fd
+mv $root/bin/fd.1 $man_path/fd.1
+
