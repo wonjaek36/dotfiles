@@ -3,8 +3,8 @@ if [ -e "$HOME/.common.sh" ]; then
     source $HOME/.common.sh
 fi
 
-ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
-BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
+export ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
+export BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
 if [ -d $ZSH_COMPLETION_PATH ]; then
     mkdir -p $ZSH_COMPLETION_PATH
 fi
