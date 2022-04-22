@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -17,10 +17,13 @@ if [ -f $HOME/.common.bz.sh ]; then
     source $HOME/.common.bz.sh
 fi
 
+export ZSH="$HOME/.oh-my-zsh"
+
 # load zgenom
 [ ! -d "${HOME}/.zgenom" ] && git clone --depth 1 https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
 source "${HOME}/.zgenom/zgenom.zsh" > /dev/null
 
+FZF_BASE=$HOME/.vim/plugged/fzf
 ### zgenom ###
 zgenom autoupdate
 
@@ -31,7 +34,7 @@ if ! zgenom saved; then
 
 	# plugins
 	zgenom oh-my-zsh plugins/git
-    zgenom oh-my-zsh plugins/fzf
+    # zgenom oh-my-zsh plugins/fzf
 	zgenom oh-my-zsh plugins/sudo
 	zgenom oh-my-zsh plugins/python
 	zgenom oh-my-zsh plugins/systemd
