@@ -33,6 +33,9 @@ check_git_exists() {
 }
 ### End of Functions ###
 
+ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
+BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
+
 ##### INSTALL PYENV ##### 
 if ! ( command git --version > /dev/null ); then
 	echo "Please install git first"
@@ -169,6 +172,8 @@ else
     mv bat-$BAT_VERSION-x86_64-unknown-linux-musl bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh $ZSH_COMPLETION_PATH
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash $BASH_COMPLETION_PATH
     cd $HOME
 fi
 ##### End of Bat #####
