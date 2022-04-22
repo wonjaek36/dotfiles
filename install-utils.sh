@@ -207,19 +207,19 @@ echo "### End ripgrep ###"
 
 
 ### Install fzf #####
-GIT_CHECK=$(check_git_exists)
-if [ $GIT_CHECK -ne 0 ]; then
-    echo "git command not found, skip install fzf"
-else
-    if [ -d $HOME/.local/.fzf ]; then
-        echo "Previous installed fzf, removed"
-        rm -rf $HOME/.local/.fzf
-    fi
-
-    git clone https://github.com/junegunn/fzf.git $HOME/.local/.fzf
-    cd $HOME/.local/.fzf
-    printf 'y\ny\ny\n' | $HOME/.local/.fzf/install 
-fi
+# GIT_CHECK=$(check_git_exists)
+# if [ $GIT_CHECK -ne 0 ]; then
+#     echo "git command not found, skip install fzf"
+# else
+#     if [ -d $HOME/.local/.fzf ]; then
+#         echo "Previous installed fzf, removed"
+#         rm -rf $HOME/.local/.fzf
+#     fi
+# 
+#     git clone https://github.com/junegunn/fzf.git $HOME/.local/.fzf
+#     cd $HOME/.local/.fzf
+#     printf 'y\ny\ny\n' | $HOME/.local/.fzf/install 
+# fi
 ## End of fzf #####
 
 echo '###### Install fd #####'
