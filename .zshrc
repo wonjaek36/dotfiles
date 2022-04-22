@@ -188,13 +188,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ### END OF NVM ###
 
-### BAT ###
-export BAT_DIR="$HOME/.local/bats/bat-latest"
-if [ -f $BAR_DIR ]; then
-    export fpath=($fpath $BAT_DIR/autocomplete)
-fi
-###########
-
 ### fzf ###
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # End of fzf ###
