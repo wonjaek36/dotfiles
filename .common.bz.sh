@@ -5,8 +5,12 @@ fi
 
 ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
 BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
-mkdir -p $ZSH_COMPLETION_PATH
-mkdir -p $BASH_COMPLETION_PATH
+if [ -d $ZSH_COMPLETION_PATH ]; then
+    mkdir -p $ZSH_COMPLETION_PATH
+fi
+if [ -d $BASH_COMPLETION_PATH ]; then
+    mkdir -p $BASH_COMPLETION_PATH
+fi
 
 if [[ ! $fpath =~ $ZSH_COMPLETION_PATH ]]; then
     fpath=($ZSH_COMPLETION_PATH $fpath)
