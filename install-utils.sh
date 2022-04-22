@@ -182,8 +182,8 @@ else
     mv bat-$BAT_VERSION-x86_64-unknown-linux-musl bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
-    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh "$ZSH_COMPLETION_PATH/bat.zsh"
-    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash "$BASH_COMPLETION_PATH/bat.bash"
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh "$ZSH_COMPLETION_PATH/_bat"
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash "$BASH_COMPLETION_PATH/bat"
     cp $HOME/.local/bats/bat-latest/bat.1 $MAN_PATH/bat.1
     cd $HOME
 fi
