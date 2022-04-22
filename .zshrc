@@ -185,6 +185,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ### END OF NVM ###
 
+alias cd='pushd'
+alias back='popd'
+
 # Enable fzf-tab
 enable-fzf-tab
 
