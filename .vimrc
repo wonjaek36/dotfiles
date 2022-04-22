@@ -45,7 +45,7 @@ let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 let g:airline#extensions#tabline#left_sep     = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'spaceduck'
 
 " ctrlp
 " https://github.com/ctrlpvim/ctrlp.vim
@@ -78,7 +78,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " colorschemes
-Plug 'pineapplegiant/spaceduck'
+Plug 'pineapplegiant/spaceduck', {'branch': 'master'}
+Plug 'sheerun/vim-polyglot'
+" For spaceduck syntax highlight more gracefully
 Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
@@ -198,10 +200,10 @@ augroup end
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+"nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -266,6 +268,46 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 """"""" End of Coc Settings
+
+" Pipe selected visual block -- CHARACTER WISE -- to command.
+" <C-u> after colon is used to cancel " '<,'> ", and it will be piped to
+" command's stdin.
+xnoremap <leader>c :<C-u> call PipeRangedSelection()<CR>
+
+function! PipeRangedSelection()
+	let cmd = input("Command: ")
+	redraw
+	echo system(cmd, GetVisualSelection(visualmode()))
+endfunction
+
+" Forked from https://stackoverflow.com/a/61486601
+function! GetVisualSelection(mode)
+	" call with visualmode() as the argument
+	let [line_start, column_start] = getpos("'<")[1:2]
+	let [line_end, column_end]     = getpos("'>")[1:2]
+	let lines = getline(line_start, line_end)
+	if a:mode ==# 'v'
+		" Must trim the end before the start, the beginning will shift left.
+		let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+		let lines[0] = lines[0][column_start - 1:]
+	elseif  a:mode ==# 'V'
+		" Line mode no need to trim start or end
+	elseif  a:mode == "\<c-v>"
+		" Block mode, trim every line
+		let new_lines = []
+		let i = 0
+		for line in lines
+			let lines[i] = line[column_start - 1: column_end - (&selection == 'inclusive' ? 1 : 2)]
+			let i = i + 1
+		endfor
+	else
+		return ''
+	endif
+	"for line in lines
+	"    echom line
+	"endfor
+	return join(lines, "\n")
+endfunction
 
 " Keymapping
 " NERDTreeKeymapping
