@@ -49,7 +49,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-history-substring-search
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions
-    zgenom load RobSis/zsh-completions-generator
+    # zgenom load RobSis/zsh-completions-generator
     zgen load MichaelAquilina/zsh-autoswitch-virtualenv
 
 	# Install ohmyzsh osx plugin if on macOS
