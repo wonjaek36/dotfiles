@@ -5,6 +5,7 @@ fi
 
 export ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
 export BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
+export FZF_BASE=/home/wjkim/.local/.fzf/
 if [ ! -d $ZSH_COMPLETION_PATH ]; then
     mkdir -p $ZSH_COMPLETION_PATH
 fi
