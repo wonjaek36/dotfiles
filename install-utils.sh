@@ -1,3 +1,4 @@
+#!/bin/bash
 ####### Functions #######
 pyenv_checker () {
     if ! (command pyenv root 1> /dev/null 2>&1); then
@@ -28,13 +29,14 @@ check_git_exists() {
 
     # if git exists return 0, or not 0
     git --version 1>/dev/null 2>/dev/null
-    GIT_CHECK=$(echo $?)
-    return $GIT_CHECK
+    echo $?
 }
 ### End of Functions ###
 
 ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
 BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
+mkdir -p $ZSH_COMPLETION_PATH
+mkdir -p $BASH_COMPLETION_PATH
 
 ##### INSTALL PYENV ##### 
 if ! ( command git --version > /dev/null ); then
@@ -180,7 +182,7 @@ fi
 
 ### Install fzf #####
 GIT_CHECK=$(check_git_exists)
-if [ $GIT_CHECK != 0 ]; then
+if [ $GIT_CHECK -ne 0 ]; then
     echo "git command not found, skip install fzf"
 else
     if [ -d $HOME/.local/.fzf ]; then
