@@ -105,3 +105,4 @@ bindkey '^ ' autosuggest-accept
 ##### End of Bind key #####
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -x neofetch ] && neofetch
