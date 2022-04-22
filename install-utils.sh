@@ -1,3 +1,4 @@
+#!/bin/bash
 ####### Functions #######
 pyenv_checker () {
     if ! (command pyenv root 1> /dev/null 2>&1); then
@@ -28,10 +29,22 @@ check_git_exists() {
 
     # if git exists return 0, or not 0
     git --version 1>/dev/null 2>/dev/null
-    GIT_CHECK=$(echo $?)
-    return $GIT_CHECK
+    echo $?
 }
 ### End of Functions ###
+
+export ZSH_COMPLETION_PATH=$HOME/.local/share/zsh/vendor-completions
+export BASH_COMPLETION_PATH=$HOME/.local/share/bash/vendor-completions
+export MAN_PATH=$HOME/.local/share/man/man1
+if [ ! -d $ZSH_COMPLETION_PATH ]; then
+    mkdir -p $ZSH_COMPLETION_PATH
+fi
+if [ ! -d $BASH_COMPLETION_PATH ]; then
+    mkdir -p $BASH_COMPLETION_PATH
+fi
+if [ ! -d $MAN_PATH ]; then
+    mkdir -p $MAN_PATH
+fi
 
 ##### INSTALL PYENV ##### 
 if ! ( command git --version > /dev/null ); then
@@ -169,13 +182,33 @@ else
     mv bat-$BAT_VERSION-x86_64-unknown-linux-musl bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh "$ZSH_COMPLETION_PATH/bat.zsh"
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash "$BASH_COMPLETION_PATH/bat.bash"
+    cp $HOME/.local/bats/bat-latest/bat.1 $MAN_PATH/bat.1
     cd $HOME
 fi
 ##### End of Bat #####
 
+##### Install fd #####'
+echo "################## Install fd ##################"
+get_latest_from_github 'sharkdp/fd' 'x86_64-unknown-linux-musl.tar.gz' | tar xz -C "$HOME/.local/bin" --strip 1
+cp "$HOME/.local/bin/autocomplete/_fd" "$ZSH_COMPLETION_PATH/_fd"
+cp "$HOME/.local/bin/autocomplete/fd.bash" "$BASH_COMPLETION_PATH/fd"
+cp "$HOME/.local/bin/fd.1" "$MAN_PATH/fd.1"
+##### End of fd ######'
+
+##### Install ripgrep #####'
+echo "################## Install ripgrep #################"
+get_latest_from_github burntSushi/ripgrep linux-musl.tar.gz 2> /dev/null | tar xz -C "$HOME/.local/bin" --strip 1
+cp "$HOME/.local/bin/complete/_rg" "$ZSH_COMPLETION_PATH/_rg"
+cp "$HOME/.local/bin/complete/rg.bash" "$BASH_COMPLETION_PATH/rg"
+cp "$HOME/.local/bin/doc/rg.1" "$MAN_PATH/rg.1"
+echo "### End ripgrep ###"
+
+
 ### Install fzf #####
 GIT_CHECK=$(check_git_exists)
-if [ $GIT_CHECK != 0 ]; then
+if [ $GIT_CHECK -ne 0 ]; then
     echo "git command not found, skip install fzf"
 else
     if [ -d $HOME/.local/.fzf ]; then
