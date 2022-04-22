@@ -312,8 +312,8 @@ endfunction
 " Keymapping
 " NERDTreeKeymapping
 " map <Leader>nte <ESC>:NERDTree<CR>
-nmap <C-n> <ESC>:NERDTree<CR>
-map <Leader>ntt <ESC>:NERDTreeToggle<CR>
+nmap <C-n> <ESC>:NERDTreeToggle<CR>
+map <Leader>nte <ESC>:NERDTree<CR>
 " map <Leader>ntf <ESC>:NERDTreeFocus<CR>
 " map <C-f> <C-f> <ESC>:NERDTreeFocus<CR>
 nmap <C-A-f> <ESC>:NERDTreeFocus<CR>
