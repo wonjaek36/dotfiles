@@ -14,3 +14,4 @@ mkdir -p $HOME/.config/nvim && cp -f init.vim $HOME/.config/nvim/init.vim 2>/dev
 
 # copy bash_profile to $HOME/.bash_profile
 cp -f .bash_profile $HOME/.bash_profile 2>/dev/null
+cp -f .tmux.conf $HOME/.tmux.conf 2>/dev/null
