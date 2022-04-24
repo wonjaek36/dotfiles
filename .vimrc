@@ -57,6 +57,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 " provide a convenient way to select
 Plug 'michaeljsmith/vim-indent-object'
 
+" vim tmux seamless navigation
+" Alt + hjkl to move pane/buffer
+Plug 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
 " nerdcommenter
 " https://github.com/preservim/nerdcommenter
 " Select & Comment!
