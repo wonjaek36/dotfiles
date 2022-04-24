@@ -228,3 +228,7 @@ mv $HOME/.local/bin/autocomplete/_fd $ZSH_COMPLETION_PATH/_fd
 mv $HOME/.local/bin/autocomplete/fd.bash $BASH_COMPLETION_PATH/fd
 mv $HOME/.local/bin/fd.1 $MAN_PATH/fd.1
 
+
+# echo '##### Install tmux #####'
+# TODO Install tmux 3.2
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
