@@ -104,5 +104,8 @@ alias back='popd'
 bindkey '^ ' autosuggest-accept
 ##### End of Bind key #####
 
+if [ ! -f ~/.fzf.zsh ]; then
+    $FZF_BASE/install --all    
+fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v neofetch)" ] && neofetch

@@ -10,6 +10,10 @@ filetype off
 set rtp+=~/.vim/autoload/plug.vim
 
 call plug#begin('~/.vim/plugged')
+" Yggdroot/indentLine
+" https://github.com/Yggdroot/indentLine
+Plug Yggdroot/indentLine
+
 " NerdTree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " NerdTree Configs
@@ -27,7 +31,6 @@ Plug 'tpope/vim-fugitive'
 " https://github.com/blueyed/vim-diminactive
 " Change background color depends on cursor location
 Plug 'blueyed/vim-diminactive'
-let g:diminactive_use_colorcolumn = 1
 
 
 " vim-airline
@@ -56,6 +59,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 " https://github.com/michaeljsmith/vim-indent-object
 " provide a convenient way to select
 Plug 'michaeljsmith/vim-indent-object'
+
+" vim tmux seamless navigation
+" Alt + hjkl to move pane/buffer
+Plug 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
 " nerdcommenter
 " https://github.com/preservim/nerdcommenter
@@ -312,8 +325,8 @@ endfunction
 " Keymapping
 " NERDTreeKeymapping
 " map <Leader>nte <ESC>:NERDTree<CR>
-nmap <C-n> <ESC>:NERDTree<CR>
-map <Leader>ntt <ESC>:NERDTreeToggle<CR>
+nmap <C-n> <ESC>:NERDTreeToggle<CR>
+map <Leader>nte <ESC>:NERDTree<CR>
 " map <Leader>ntf <ESC>:NERDTreeFocus<CR>
 " map <C-f> <C-f> <ESC>:NERDTreeFocus<CR>
 nmap <C-A-f> <ESC>:NERDTreeFocus<CR>
@@ -327,7 +340,7 @@ nnoremap <space> za
 
 " Python configs
 aug python
-    au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
+    au FileType python setlocal ts=4 sts=4 sw=4 expandtab
     au FileType python set colorcolumn=80
     au FileType python set textwidth=79
     " au FileType python highlight ColorColumn ctermbg=3

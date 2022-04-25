@@ -61,7 +61,7 @@ if [ $SUDO_RET = 0 ]; then
         sudo apt install -y make build-essential libssl-dev zlib1g-dev \
             libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
             libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
-            liblzma-dev python-openssl 
+            liblzma-dev python-openssl libevent-dev
     fi
     if command yum --version 1> /dev/null 2>&1; then
         # ToDo Support Redhat dependencies
@@ -182,8 +182,8 @@ else
     mv bat-$BAT_VERSION-x86_64-unknown-linux-musl bat-$BAT_VERSION
     ln -s $HOME/.local/bats/bat-$BAT_VERSION/bat $HOME/.local/bin/bat
     ln -s $HOME/.local/bats/bat-$BAT_VERSION $HOME/.local/bats/bat-latest
-    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh "$ZSH_COMPLETION_PATH/bat.zsh"
-    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash "$BASH_COMPLETION_PATH/bat.bash"
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.zsh "$ZSH_COMPLETION_PATH/_bat"
+    cp $HOME/.local/bats/bat-latest/autocomplete/bat.bash "$BASH_COMPLETION_PATH/bat"
     cp $HOME/.local/bats/bat-latest/bat.1 $MAN_PATH/bat.1
     cd $HOME
 fi
@@ -228,3 +228,7 @@ mv $HOME/.local/bin/autocomplete/_fd $ZSH_COMPLETION_PATH/_fd
 mv $HOME/.local/bin/autocomplete/fd.bash $BASH_COMPLETION_PATH/fd
 mv $HOME/.local/bin/fd.1 $MAN_PATH/fd.1
 
+
+# echo '##### Install tmux #####'
+# TODO Install tmux 3.2
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

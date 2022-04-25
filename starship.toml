@@ -71,11 +71,16 @@ $line_break\
 [$character](bold green)
 """
 
+right_format = """
+$status\
+$time
+"""
+
 # Configure if and how the time is shown
 [time]
 disabled = false
 time_format = "%T"
-format = "🕙[$time ](bold blue)"
+format = "🕙[$time](bold blue)"
 
 [sudo]
 disabled = false
