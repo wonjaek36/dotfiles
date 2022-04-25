@@ -71,11 +71,6 @@ $line_break\
 [$character](bold green)
 """
 
-right_format = """
-$status\
-$time
-"""
-
 # Configure if and how the time is shown
 [time]
 disabled = false
