@@ -64,16 +64,19 @@ $battery\
 $cmd_duration\
 $line_break\
 $jobs\
-$time\
-$status\
 $shell\
 [$character](bold green)"""
+
+right_format = """
+$status\
+$time
+"""
 
 # Configure if and how the time is shown
 [time]
 disabled = false
 time_format = "%T"
-format = "🕙[$time ](bold blue)"
+format = "🕙[$time](bold blue)"
 
 [sudo]
 disabled = false
