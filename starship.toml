@@ -62,12 +62,14 @@ $custom\
 $sudo\
 $battery\
 $cmd_duration\
-$line_break\
-$jobs\
-$time\
 $status\
+$fill\
+$time\
+$jobs\
 $shell\
-[$character](bold green)"""
+$line_break\
+[$character](bold green)
+"""
 
 # Configure if and how the time is shown
 [time]
