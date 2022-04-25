@@ -12,7 +12,10 @@ set rtp+=~/.vim/autoload/plug.vim
 call plug#begin('~/.vim/plugged')
 " Yggdroot/indentLine
 " https://github.com/Yggdroot/indentLine
-Plug Yggdroot/indentLine
+Plug 'Yggdroot/indentLine'
+let g:indentLine_char = '|'
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_setColors = 0
 
 " NerdTree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
