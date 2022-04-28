@@ -229,6 +229,13 @@ mv $HOME/.local/bin/autocomplete/fd.bash $BASH_COMPLETION_PATH/fd
 mv $HOME/.local/bin/fd.1 $MAN_PATH/fd.1
 
 
-# echo '##### Install tmux #####'
-# TODO Install tmux 3.2
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo '##### Install tmux #####'
+mkdir -p $HOME/.local/.tmux/tmux-latest
+get_latest_from_github tmux/tmux .tar.gz 2>/dev/null | tar -xz -C "$HOME/.local/.tmux/tmux-latest" --strip 1
+cd $HOME/.local/.tmux/tmux-latest
+./configure --prefix=$HOME/.local/
+make -j 4
+make install
+mkdir -p $HOME/.tmux/plugins
+rm -rf $HOME/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
