@@ -17,6 +17,9 @@ if [ -f $HOME/.common.bz.sh ]; then
     source $HOME/.common.bz.sh
 fi
 
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # load zgenom
