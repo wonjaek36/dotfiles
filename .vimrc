@@ -379,6 +379,8 @@ set expandtab
 set backspace=indent,eol,start
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+autocmd BufReadPost,FileReadPost * normal zR
+
 highlight ColorColumn ctermbg=16
 
 " Theme
