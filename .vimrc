@@ -35,6 +35,10 @@ Plug 'tpope/vim-fugitive'
 " Change background color depends on cursor location
 Plug 'blueyed/vim-diminactive'
 
+ " nvim-treesitter
+ if has("nvim")
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ endif
 
 " vim-airline
 " https://github.com/vim-airline/vim-airline
@@ -373,6 +377,8 @@ set hlsearch
 set smartindent
 set expandtab
 set backspace=indent,eol,start
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 highlight ColorColumn ctermbg=16
 
 " Theme
