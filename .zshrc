@@ -6,13 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git)
 
 # source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [ -f $HOME/.common.bz.sh ]; then
     source $HOME/.common.bz.sh
 fi
@@ -85,7 +86,7 @@ fi
 eval "$(dircolors $HOME/.dircolors)"
 
 ### STARSHIP ###
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 ### END OF STARSHIP ###
 
 # To customize prompt, run `p10k configure` or edit ~/workspace/configs/.p10k.zsh.
