@@ -98,7 +98,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " colorschemes
-Plug 'pineapplegiant/spaceduck', {'branch': 'master'}
+Plug 'pineapplegiant/spaceduck', {'branch': 'main'}
 Plug 'sheerun/vim-polyglot'
 " For spaceduck syntax highlight more gracefully
 Plug 'junegunn/seoul256.vim'
