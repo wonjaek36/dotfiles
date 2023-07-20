@@ -114,5 +114,5 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v neofetch)" ] && neofetch
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
