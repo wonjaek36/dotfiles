@@ -47,9 +47,9 @@ else
 fi
 
 # Install starship theme 
-echo "Download starship"
-curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir $HOME/.local/bin
-
-
-echo "Success installing zsh"
-echo "Change default shell in /etc/passwd to $HOME/.local/bin/zsh"
+# echo "Download starship"
+# curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir $HOME/.local/bin
+# 
+# 
+# echo "Success installing zsh"
+# echo "Change default shell in /etc/passwd to $HOME/.local/bin/zsh"
