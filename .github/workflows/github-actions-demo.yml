@@ -1,5 +1,5 @@
 name: Github Actions Demo
-run-name: ${{ github.actor }} is testing out Github Actions :rocket:
+run-name: "${{ github.actor }} is testing out Github Actions :rocket:"
 on: [push]
 jobs:
   Explore-Github-Actions:
