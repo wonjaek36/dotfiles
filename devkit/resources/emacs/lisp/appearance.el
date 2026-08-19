@@ -1,3 +1,5 @@
+(setq frame-resize-pixelwise t)
+
 ;; Font (GUI only)
 (when (display-graphic-p)
   (set-face-attribute 'default nil
