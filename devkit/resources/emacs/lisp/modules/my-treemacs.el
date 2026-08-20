@@ -6,10 +6,12 @@
   (setq treemacs-width-is-initially-locked nil)
   (setq treemacs-space-between-root-nodes nil)
   (setq treemacs-read-string-input 'from-minibuffer)
+  (treemacs-follow-mode -1)
 
   :bind
   (("C-c t t" . treemacs)
    ("C-c t s" . treemacs-select-window)
+   ("C-c t f" . treemacs-find-file)
    ("C-c t 1" . treemacs-delete-other-windows)
    ("C-c t d" . treemacs-select-directory)
    ("C-c t b" . treemacs-bookmark)
