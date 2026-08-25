@@ -2,6 +2,8 @@
 (require 'languages/core)
 (require 'url-parse)
 
+(add-to-list 'auto-mode-alist '("\\.java\\'" . java-ts-mode))
+
 (defconst languages-java--jdtls-java-version "21"
   "Java version used to run JDTLS.")
 

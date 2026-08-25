@@ -1,3 +1,5 @@
+;; treesit-auto is disabled because its global mode recalculates all language remaps whenever a file opens.
+
 (require 'cl-lib)
 
 ;; Global
@@ -5,11 +7,11 @@
 (electric-pair-mode 1)
 
 ;; Tree-sitter
-;; Use Tree-sitter modes and prompt to install missing grammers.
-(use-package treesit-auto
-  :config
-  (setq treesit-auto-install 'prompt)
-  (global-treesit-auto-mode))
+(require 'treesit)
+;; (use-package treesit-auto
+;;   :config
+;;   (setq treesit-auto-install 'prompt)
+;;   (global-treesit-auto-mode))
 
 ;; hs-minor-mode folding blocks
 (add-hook 'prog-mode-hook #'hs-minor-mode)

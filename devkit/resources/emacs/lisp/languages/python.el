@@ -1,3 +1,5 @@
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-ts-mode))
+
 ;; Requires python-lsp-server and python-lsp-ruff on PATH.
 (add-hook 'python-ts-mode-hook #'eglot-ensure)
 (add-hook 'python-mode-hook #'eglot-ensure)
