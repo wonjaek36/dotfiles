@@ -39,17 +39,12 @@
 ;; Turn on line number
 (global-display-line-numbers-mode 1)
 
-;; Default indentation (4 spaces/tabs)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
-(use-package exec-path-from-shell
-  :config
-  (exec-path-from-shell-initialize))
-
 ;; Add lisp directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lisp/modules" user-emacs-directory))
+
+;; Misc
+(require 'my-misc)
 
 ;; Treemacs
 (require 'my-treemacs)
