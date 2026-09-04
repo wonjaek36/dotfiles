@@ -33,20 +33,18 @@
 
 (add-to-list 'load-path
              (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path
-             (expand-file-name "lisp/modules" user-emacs-directory))
 
 ;; Misc
 (require 'my-misc)
 
 ;; Treemacs
-(require 'my-treemacs)
+(require 'init-treemacs)
 
 ;; Completion
-(require 'my-completion)
+(require 'init-completion)
 
 ;; Vterm
-(require 'my-vterm)
+(require 'init-terminal)
 
 ;; Appearance
 (require 'appearance)

@@ -6,4 +6,4 @@
   :custom
   (vterm-timer-delay 0.01))
 
-(provide 'my-vterm)
+(provide 'init-terminal)
