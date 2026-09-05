@@ -45,18 +45,18 @@ destination = "~/.emacs.d/lisp/appearance.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/modules/my-treemacs.el"
-destination = "~/.emacs.d/lisp/modules/my-treemacs.el"
+source = "resources/emacs/lisp/init-treemacs.el"
+destination = "~/.emacs.d/lisp/init-treemacs.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/modules/my-completion.el"
-destination = "~/.emacs.d/lisp/modules/my-completion.el"
+source = "resources/emacs/lisp/init-completion.el"
+destination = "~/.emacs.d/lisp/init-completion.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/modules/my-vterm.el"
-destination = "~/.emacs.d/lisp/modules/my-vterm.el"
+source = "resources/emacs/lisp/init-terminal.el"
+destination = "~/.emacs.d/lisp/init-terminal.el"
 
 [[emacs.resources]]
 type = "local"
