@@ -41,7 +41,7 @@ Return nil."
 
   (setq dashboard-startup-banner 'official
         dashboard-center-content t
-        dashboard-items '((treemacs-workspaces . 10)
+        dashboard-items '((treemacs-workspaces . 30)
                           (recents . 5)))
 
   (dashboard-setup-startup-hook)

@@ -29,4 +29,4 @@
   :config
   (treemacs-load-theme "nerd-icons"))
 
-(provide 'my-treemacs)
+(provide 'init-treemacs)

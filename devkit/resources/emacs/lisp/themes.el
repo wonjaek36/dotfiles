@@ -28,7 +28,7 @@
 
 (defconst themes--workspace-config-directory
   (expand-file-name
-   "lisp/workspaces/themes"
+   "data/workspace-themes"
    user-emacs-directory)
   "Directory containing workspace theme conf")
 

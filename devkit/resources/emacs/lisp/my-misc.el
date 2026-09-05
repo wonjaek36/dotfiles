@@ -11,4 +11,14 @@
   :config
   (exec-path-from-shell-initialize))
 
+;; Disable ring-bell
+(setq ring-bell-function 'ignore)
+
+;; Which-key (show available keybindings)
+(use-package which-key
+  :ensure t
+
+  :init
+  (which-key-mode))
+
 (provide 'my-misc)

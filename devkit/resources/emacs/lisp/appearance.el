@@ -1,5 +1,10 @@
 (setq frame-resize-pixelwise t)
 
+;; Line number
+(setq display-line-numbers-type t)
+;; Turn on line number
+(global-display-line-numbers-mode 1)
+
 ;; Font (GUI only)
 (when (display-graphic-p)
   (set-face-attribute 'default nil
