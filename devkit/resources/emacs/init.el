@@ -55,11 +55,8 @@
 ;; Dashboard
 (require 'init-dashboard)
 
-;; Markdown
-(require 'markdown)
-
 ;; Languages
-(require 'languages)
+(require 'init-languages)
 
 ;; Artificial Intelligence
 (require 'agent)

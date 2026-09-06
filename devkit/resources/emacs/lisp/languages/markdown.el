@@ -1,4 +1,4 @@
-;;; markdowns.el --- Markdown configurations
+;;; languages/markdown.el --- Markdown configurations
 
 ;;; Commentary:
 ;; Markdown-specific configurations including syntax highlighting,
@@ -53,5 +53,5 @@
          ("C-c m r" . markdown-read-mode)
          ("C-c m w" . markdown-write-mode)))
 
-(provide 'markdown)
-;;; markdowns.el ends here
+(provide 'languages/markdown)
+;;; languages/markdown.el ends here

@@ -1,4 +1,5 @@
 (require 'languages/core)
+(require 'languages/markdown)
 (require 'languages/go)
 (require 'languages/ruby)
 (require 'languages/javascript)
@@ -7,4 +8,4 @@
 (require 'languages/python)
 (require 'languages/rust)
 
-(provide 'languages)
+(provide 'init-languages)

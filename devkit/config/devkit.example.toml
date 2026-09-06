@@ -60,13 +60,13 @@ destination = "~/.emacs.d/lisp/init-terminal.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/languages.el"
-destination = "~/.emacs.d/lisp/languages.el"
+source = "resources/emacs/lisp/init-languages.el"
+destination = "~/.emacs.d/lisp/init-languages.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/markdown.el"
-destination = "~/.emacs.d/lisp/markdown.el"
+source = "resources/emacs/lisp/languages/markdown.el"
+destination = "~/.emacs.d/lisp/languages/markdown.el"
 
 [[emacs.resources]]
 type = "local"
