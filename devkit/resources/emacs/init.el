@@ -47,7 +47,7 @@
 (require 'init-terminal)
 
 ;; Appearance
-(require 'appearance)
+(require 'init-appearance)
 
 ;; Themes
 (require 'themes)

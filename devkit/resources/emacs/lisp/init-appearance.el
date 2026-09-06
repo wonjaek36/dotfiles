@@ -46,4 +46,4 @@
 (with-eval-after-load 'treemacs-faces
   (init-appearance-apply-treemacs-faces))
 
-(provide 'appearance)
+(provide 'init-appearance)

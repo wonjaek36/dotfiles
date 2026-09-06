@@ -40,8 +40,8 @@ destination = "~/.emacs.d/init.el"
 
 [[emacs.resources]]
 type = "local"
-source = "resources/emacs/lisp/appearance.el"
-destination = "~/.emacs.d/lisp/appearance.el"
+source = "resources/emacs/lisp/init-appearance.el"
+destination = "~/.emacs.d/lisp/init-appearance.el"
 
 [[emacs.resources]]
 type = "local"
