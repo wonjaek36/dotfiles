@@ -55,4 +55,4 @@
 ;;                     (decode-coding-string path 'utf-8)
 ;;                   path))))
 
-(provide 'languages/core)
+(provide 'languages/common)

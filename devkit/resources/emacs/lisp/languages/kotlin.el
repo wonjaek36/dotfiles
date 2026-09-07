@@ -1,6 +1,6 @@
 (require 'arc-mode)
 (require 'cl-lib)
-(require 'languages/core)
+(require 'languages/common)
 (require 'subr-x)
 (require 'url-util)
 

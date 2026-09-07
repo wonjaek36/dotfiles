@@ -1,4 +1,4 @@
-(require 'languages/core)
+(require 'languages/common)
 (require 'languages/markdown)
 (require 'languages/go)
 (require 'languages/ruby)

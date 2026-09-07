@@ -1,5 +1,5 @@
 (require 'cl-lib)
-(require 'languages/core)
+(require 'languages/common)
 (require 'url-parse)
 
 (add-to-list 'auto-mode-alist '("\\.java\\'" . java-ts-mode))
