@@ -1,3 +1,5 @@
+(require 'languages/common)
+
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-ts-mode))
 
 ;; Requires python-lsp-server and python-lsp-ruff on PATH.

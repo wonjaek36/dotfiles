@@ -1,3 +1,5 @@
+(require 'languages/common)
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             (languages--set-indent nil 2)))

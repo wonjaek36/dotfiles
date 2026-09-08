@@ -50,7 +50,7 @@
 (require 'init-appearance)
 
 ;; Themes
-(require 'themes)
+(require 'init-themes)
 
 ;; Dashboard
 (require 'init-dashboard)

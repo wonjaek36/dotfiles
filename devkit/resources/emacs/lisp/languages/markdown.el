@@ -6,6 +6,8 @@
 
 ;;; Code:
 
+(require 'languages/common)
+
 ;; Switch a markdown buffer between writing (edit) and reading (view) modes.
 ;; view modes auto-hide markup and enter read-only; editing modes show markup.
 ;; Header scaling is applied buffer-locally so it is tied to the view mode

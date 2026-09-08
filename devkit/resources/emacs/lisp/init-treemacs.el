@@ -6,6 +6,7 @@
   (setq treemacs-width-is-initially-locked nil)
   (setq treemacs-space-between-root-nodes nil)
   (setq treemacs-read-string-input 'from-minibuffer)
+  (setq treemacs-expand-after-init nil) ;; Disable expand automatically
   (treemacs-follow-mode -1)
 
   :bind

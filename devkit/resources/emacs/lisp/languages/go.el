@@ -1,3 +1,5 @@
+(require 'languages/common)
+
 ;; Tree-sitter language grammars not covered by treesit-auto.
 (add-to-list 'treesit-language-source-alist
              '(gomod "https://github.com/camdencheek/tree-sitter-go-mod"))

@@ -26,4 +26,8 @@
               ("M-]" . copilot-next-completion)
               ("M-[" . copilot-previous-completion)))
 
+(with-eval-after-load 'copilot
+  (setf (alist-get 'emacs-lisp-mode copilot-indentation-alist)
+        '(lisp-indent-offset 2)))
+
 (provide 'init-agent)

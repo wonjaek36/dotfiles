@@ -131,4 +131,4 @@ Return the loaded theme symbol, or nil when all candidates fail."
 (themes-apply-current-workspace-theme)
 
 ;; provide
-(provide 'themes)
+(provide 'init-themes)

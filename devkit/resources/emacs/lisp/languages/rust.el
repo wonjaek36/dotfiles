@@ -1,3 +1,5 @@
+(require 'languages/common)
+
 ;; Tree-sitter language grammars not covered by treesit-auto.
 (add-to-list 'treesit-language-source-alist
              '(rust "https://github.com/tree-sitter/tree-sitter-rust"))
