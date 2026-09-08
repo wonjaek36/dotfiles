@@ -186,4 +186,57 @@
 (add-hook 'find-file-hook
           #'languages-kotlin--make-dependency-source-read-only)
 
+;; Eglot / Kotlin LSP completion compatibility
+;; Kotlin sends an empty textEdit and applies completion through a command.
+;; Eglot 1.24 does not execute that command after accepting a candidate.
+
+(defun languages-kotlin--completion-exit
+    (original-exit server state candidate status)
+  "Run ORIGINAL-EXIT, then execute the Kotlin completion command once."
+  (unless (car state)
+    (let* ((accepted (memq status '(finished exact)))
+           (item (get-text-property 0 'eglot--lsp-item candidate))
+           (command (plist-get item :command)))
+      (funcall original-exit candidate status)
+      (when accepted
+        (setcar state t)
+        (when (equal (plist-get command :command)
+                     "jetbrains.kotlin.completion.apply")
+          (eglot-execute server (copy-tree command)))))))
+
+(defun languages-kotlin--completion-at-point ()
+  "Return Eglot completion with Kotlin command handling."
+  (let ((capf (eglot-completion-at-point)))
+    (when capf
+      (let* ((properties (copy-sequence (nthcdr 3 capf)))
+             (original-exit (plist-get properties :exit-function)))
+        (if (not original-exit)
+            capf
+          (append
+           (cl-subseq capf 0 3)
+           (plist-put
+            properties :exit-function
+            (apply-partially
+             #'languages-kotlin--completion-exit
+             original-exit (eglot-current-server) (list nil)))))))))
+
+(defun languages-kotlin--setup-completion ()
+  "Enable the completion adapter in Eglot-managed Kotlin buffers."
+  (when (derived-mode-p 'kotlin-mode)
+    (setq-local
+     completion-at-point-functions
+     (if (eglot-managed-p)
+         (mapcar
+          (lambda (function)
+            (if (eq function #'eglot-completion-at-point)
+                #'languages-kotlin--completion-at-point
+              function))
+          completion-at-point-functions)
+       (remq #'languages-kotlin--completion-at-point
+             completion-at-point-functions)))))
+
+(with-eval-after-load 'eglot
+  (add-hook 'eglot-managed-mode-hook
+            #'languages-kotlin--setup-completion))
+
 (provide 'languages/kotlin)
