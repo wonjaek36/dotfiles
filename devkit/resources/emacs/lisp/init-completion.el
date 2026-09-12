@@ -23,7 +23,8 @@
    ("C-c f" . consult-find)
    ("C-c r" . consult-ripgrep)
    ("C-x b" . consult-buffer)
-   ("C-c i" . consult-imenu)))
+   ("C-c i" . consult-imenu)
+   ("M-g g" . consult-goto-line)))
 
 (use-package embark
   :ensure t
